@@ -1,0 +1,3634 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="知名端口,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="简介计算机之间依照互联网传输层TCP/IP协议的协议通信，不同的协议都对应不同的端口。并且，利用数据报文的UDP也不一定和TCP采用相同的端口号码。以下为两种通信协议的端口列表链接。知名端口，顾名思义，大家约定俗成的共识的使用的端口号。 知名端口号   端口 描述 状态     0/TCP,UDP 保留端口；不使用（若发送过程不准备接受回复消息，则可以作为源端口） 官方   1/TCP,UDP T">
+<meta name="keywords" content="知名端口">
+<meta property="og:type" content="article">
+<meta property="og:title" content="知名端口号">
+<meta property="og:url" content="http://yoursite.com/tcp-ip-port.html">
+<meta property="og:site_name" content="loop">
+<meta property="og:description" content="简介计算机之间依照互联网传输层TCP/IP协议的协议通信，不同的协议都对应不同的端口。并且，利用数据报文的UDP也不一定和TCP采用相同的端口号码。以下为两种通信协议的端口列表链接。知名端口，顾名思义，大家约定俗成的共识的使用的端口号。 知名端口号   端口 描述 状态     0/TCP,UDP 保留端口；不使用（若发送过程不准备接受回复消息，则可以作为源端口） 官方   1/TCP,UDP T">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-19T07:04:22.387Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="知名端口号">
+<meta name="twitter:description" content="简介计算机之间依照互联网传输层TCP/IP协议的协议通信，不同的协议都对应不同的端口。并且，利用数据报文的UDP也不一定和TCP采用相同的端口号码。以下为两种通信协议的端口列表链接。知名端口，顾名思义，大家约定俗成的共识的使用的端口号。 知名端口号   端口 描述 状态     0/TCP,UDP 保留端口；不使用（若发送过程不准备接受回复消息，则可以作为源端口） 官方   1/TCP,UDP T">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/tcp-ip-port.html">
+
+
+
+
+
+  <title>知名端口号 | loop</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">loop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生命不息，学习不止</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/tcp-ip-port.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="whilewell">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="loop">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">知名端口号</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-19T12:14:00+08:00">
+                2019-05-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>计算机之间依照互联网传输层TCP/IP协议的协议通信，不同的协议都对应不同的端口。并且，利用数据报文的UDP也不一定和TCP采用相同的端口号码。以下为两种通信协议的端口列表链接。知名端口，顾名思义，大家约定俗成的共识的使用的端口号。</p>
+<h2 id="知名端口号"><a href="#知名端口号" class="headerlink" title="知名端口号"></a>知名端口号</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">端口</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0/TCP,UDP</td>
+<td style="text-align:left">保留端口；不使用（若发送过程不准备接受回复消息，则可以作为源端口）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1/TCP,UDP</td>
+<td style="text-align:left">TCPMUX（传输控制协议端口服务多路开关选择器）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5/TCP,UDP</td>
+<td style="text-align:left">RJE（远程作业登录）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7/TCP,UDP</td>
+<td style="text-align:left">Echo（回显）协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9/UDP</td>
+<td style="text-align:left">DISCARD（丢弃）协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9/TCP,UDP</td>
+<td style="text-align:left">网络唤醒</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">11/TCP,UDP</td>
+<td style="text-align:left">SYSTAT协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">13/TCP,UDP</td>
+<td style="text-align:left">DAYTIME协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">15/TCP,UDP</td>
+<td style="text-align:left">NETSTAT协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">17/TCP,UDP</td>
+<td style="text-align:left">QOTD（Quote of the Day，每日引用）协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">18/TCP,UDP</td>
+<td style="text-align:left">消息发送协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">19/TCP,UDP</td>
+<td style="text-align:left">CHARGEN（字符发生器）协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">20/TCP,UDP</td>
+<td style="text-align:left">文件传输协议 - 默认数据端口(FTP协议)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">21/TCP,UDP</td>
+<td style="text-align:left">文件传输协议 - 控制端口(FTP协议)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">22/TCP,UDP</td>
+<td style="text-align:left">SSH（Secure Shell） - 远程登录协议，用于安全登录文件传输（SCP，SFTP）及端口重新定向</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">23/TCP,UDP</td>
+<td style="text-align:left">Telnet终端仿真协议 - 未加密文本通信</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">25/TCP,UDP</td>
+<td style="text-align:left">SMTP（简单邮件传输协议） - 用于邮件服务器间的电子邮件传递</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">26/TCP,UDP</td>
+<td style="text-align:left">RSFTP - 一个简单的类似FTP的协议</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">35/TCP,UDP</td>
+<td style="text-align:left">任意的私有打印机服务端口</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">37/TCP,UDP</td>
+<td style="text-align:left">TIME时间协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">39/TCP,UDP</td>
+<td style="text-align:left">Resource Location Protocol（资源定位协议）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">41/TCP,UDP</td>
+<td style="text-align:left">图形</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">42/TCP,UDP</td>
+<td style="text-align:left">Host Name Server</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">42/TCP,UDP</td>
+<td style="text-align:left">WINS（WINS主机名服务）</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">43/TCP</td>
+<td style="text-align:left">WHOIS协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">49/TCP,UDP</td>
+<td style="text-align:left">TACACS登录主机协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">53/TCP,UDP</td>
+<td style="text-align:left">DNS（域名服务系统）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">56/TCP,UDP</td>
+<td style="text-align:left">远程访问协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">57/TCP</td>
+<td style="text-align:left">MTP，邮件传输协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">67/UDP</td>
+<td style="text-align:left">BOOTP（BootStrap协议）服务；同时用于动态主机设置协议(DHCP)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">68/UDP</td>
+<td style="text-align:left">BOOTP客户端；同时用于动态主机设定协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">69/UDP</td>
+<td style="text-align:left">小型文件传输协议（小型文件传输协议）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">70/TCP</td>
+<td style="text-align:left">Gopher</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">79/TCP</td>
+<td style="text-align:left">手指协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">80/TCP</td>
+<td style="text-align:left">超文本传输协议（超文本传输协议）- 用于传输网页.即常见的HTTP协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">81/TCP</td>
+<td style="text-align:left">XB Browser - Tor</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">82/UDP</td>
+<td style="text-align:left">XB Browser - 控制端口</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">88/TCP</td>
+<td style="text-align:left">Kerberos - 认证代理</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">101/TCP</td>
+<td style="text-align:left">主机名</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">102/TCP</td>
+<td style="text-align:left">ISO-TSAP协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">107/TCP</td>
+<td style="text-align:left">远程Telnet协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">109/TCP</td>
+<td style="text-align:left">POP (Post Office Protocol)，“邮局协议”，第2版</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">110/TCP</td>
+<td style="text-align:left">邮局协议，“邮局协议”，第3版 - 用于接收电子邮件</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">111/TCP,UDP</td>
+<td style="text-align:left">Sun远程过程调用协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">113/TCP</td>
+<td style="text-align:left">Ident - 旧的服务器身份识别系统，仍然被IRC服务器用来认证它的用户</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">115/TCP</td>
+<td style="text-align:left">SFTP，简单文件传输协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">117/TCP</td>
+<td style="text-align:left">UNIX间复制协议（Unix to Unix Copy Protocol，UUCP）的路径确定服务</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">118/TCP,UDP</td>
+<td style="text-align:left">SQL服务</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">119/TCP</td>
+<td style="text-align:left">网络新闻传输协议 - 用来收取新闻组的消息</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">123/UDP</td>
+<td style="text-align:left">NTP（Network Time Protocol） - 用于时间同步</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">135/TCP,UDP</td>
+<td style="text-align:left">分布式运算环境（Distributed Computing Environment，DCE）终端解决方案及定位服务</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">135/TCP,UDP</td>
+<td style="text-align:left">微软终端映射器（End Point Mapper，EPMAP）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">137/TCP,UDP</td>
+<td style="text-align:left">NetBIOS NetBIOS 名称服务</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">138/TCP,UDP</td>
+<td style="text-align:left">NetBIOS NetBIOS 数据报文服务</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">139/TCP,UDP</td>
+<td style="text-align:left">NetBIOS NetBIOS 会话服务</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">143/TCP,UDP</td>
+<td style="text-align:left">因特网信息访问协议（Internet信息访问协议 4） - 用于检索 电子邮件s</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">152/TCP,UDP</td>
+<td style="text-align:left">BFTP, 后台文件传输程序</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">153/TCP,UDP</td>
+<td style="text-align:left">简单网关监控协议（Simple Gateway Monitoring Protocol，SGMP）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">156/TCP,UDP</td>
+<td style="text-align:left">SQL服务</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">158/TCP,UDP</td>
+<td style="text-align:left">DMSP, 分布式邮件服务协议</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">161/TCP,UDP</td>
+<td style="text-align:left">简单网络管理协议 (简单网络管理协议)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">162/TCP,UDP</td>
+<td style="text-align:left">SNMP协议的TRAP操作</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">170/TCP</td>
+<td style="text-align:left">打印服务</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">179/TCP</td>
+<td style="text-align:left">边界网关协议 (边界网关协议)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">194/TCP</td>
+<td style="text-align:left">IRC（互联网中继聊天）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">201/TCP,UDP</td>
+<td style="text-align:left">AppleTalk 路由维护</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">209/TCP,UDP</td>
+<td style="text-align:left">Quick Mail 传输协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">213/TCP,UDP</td>
+<td style="text-align:left">IPX，互联网分组交换协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">218/TCP,UDP</td>
+<td style="text-align:left">MPP，信息发布协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">220/TCP,UDP</td>
+<td style="text-align:left">因特网信息访问协议，交互邮件访问协议第3版</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">259/TCP,UDP</td>
+<td style="text-align:left">ESRO, Efficient Short Remote Operations</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">264/TCP,UDP</td>
+<td style="text-align:left">BGMP，边界网关多播协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">308/TCP</td>
+<td style="text-align:left">Novastor 在线备份</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">311/TCP</td>
+<td style="text-align:left">Apple 服务器管理员工具、工作组管理</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">318/TCP,UDP</td>
+<td style="text-align:left">TSP，时间戳协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">323/TCP,UDP</td>
+<td style="text-align:left">IMMP, Internet消息映射协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">383/TCP,UDP</td>
+<td style="text-align:left">HP OpenView HTTPs 代理程序</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">366/TCP,UDP</td>
+<td style="text-align:left">SMTP, 简单邮件传送协议. ODMR,按需邮件传递</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">369/TCP,UDP</td>
+<td style="text-align:left">Rpc2 端口映射</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">371/TCP,UDP</td>
+<td style="text-align:left">ClearCase 负载平衡</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">384/TCP,UDP</td>
+<td style="text-align:left">一个远程网络服务器系统</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">387/TCP,UDP</td>
+<td style="text-align:left">AURP, AppleTalk 升级用路由协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">389/TCP,UDP</td>
+<td style="text-align:left">轻型目录访问协议 LDAP</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">401/TCP,UDP</td>
+<td style="text-align:left">不间断电源，不间断电源供应系统</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">411/TCP</td>
+<td style="text-align:left">Direct Connect Hub 端口</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">412/TCP</td>
+<td style="text-align:left">Direct Connect 客户端—客户端 端口</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">427/TCP,UDP</td>
+<td style="text-align:left">服务定位协议 (位置服务协议)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">443/TCP</td>
+<td style="text-align:left">超文本传输安全协议 - 超文本传输协议 over TLS/SSL（加密传输）,HTTPS协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">444/TCP,UDP</td>
+<td style="text-align:left">SNPP，简单网络分页协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">445/TCP</td>
+<td style="text-align:left">Microsoft-DS (Active Directory，Windows 共享, 震荡波蠕虫，Agobot, Zobotworm)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">445/UDP</td>
+<td style="text-align:left">Microsoft-DS 服务器消息块 SMB文件共享</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">464/TCP,UDP</td>
+<td style="text-align:left">Kerberos 更改/设定密码</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">465/TCP</td>
+<td style="text-align:left">Cisco 专用协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">465/TCP</td>
+<td style="text-align:left">传输层安全性协议加密的简单邮件传输协议</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">475/TCP</td>
+<td style="text-align:left">tcpnethaspsrv（Hasp 服务, TCP/IP 版本）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">497/TCP</td>
+<td style="text-align:left">dantz 备份服务</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">500/TCP,UDP</td>
+<td style="text-align:left">网络安全关系与密钥管理协议，IKE-Internet 密钥交换</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">502/TCP,UDP</td>
+<td style="text-align:left">Modbus 协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">512/TCP</td>
+<td style="text-align:left">exec, 远程进程执行</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">512/UDP</td>
+<td style="text-align:left">comsat 和 biff 命令：用于电子邮件系统</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">513/TCP</td>
+<td style="text-align:left">login，登录命令</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">513/UDP</td>
+<td style="text-align:left">Who命令，查看当前登录计算机的用户</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">514/TCP</td>
+<td style="text-align:left">远程外壳 protocol - 用于在远程计算机上执行非交互式命令，并查看返回结果</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">514/UDP</td>
+<td style="text-align:left">Syslog 协议 - 用于系统登录</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">515/TCP</td>
+<td style="text-align:left">Line Printer Daemon protocol - 用于 LPD 打印机服务器</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">517/UDP</td>
+<td style="text-align:left">Talk</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">518/UDP</td>
+<td style="text-align:left">NTalk</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">520/TCP</td>
+<td style="text-align:left">efs</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">520/UDP</td>
+<td style="text-align:left">Routing - 路由信息协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">513/UDP</td>
+<td style="text-align:left">路由器</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">524/TCP,UDP</td>
+<td style="text-align:left">NetWare核心协议（NetWare 核心协议）用于一系列功能，例如访问NetWare主服务器资源、同步时间等</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">525/UDP</td>
+<td style="text-align:left">Timed，时间服务</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">530/TCP,UDP</td>
+<td style="text-align:left">远程过程调用</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">531/TCP,UDP</td>
+<td style="text-align:left">AOL 即时通信软件, IRC</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">532/TCP</td>
+<td style="text-align:left">netnews</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">533/UDP</td>
+<td style="text-align:left">netwall,用于紧急广播</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">540/TCP</td>
+<td style="text-align:left">UUCP (Unix-to-Unix 复制协议)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">542/TCP,UDP</td>
+<td style="text-align:left">商业 (Commerce Applications)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">543/TCP</td>
+<td style="text-align:left">klogin, Kerberos登陆</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">544/TCP</td>
+<td style="text-align:left">kshell, Kerberos 远程shell</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">546/TCP,UDP</td>
+<td style="text-align:left">DHCPv6客户端</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">547/TCP,UDP</td>
+<td style="text-align:left">DHCPv6服务器</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">548/TCP</td>
+<td style="text-align:left">通过传输控制协议（TCP）的 Appletalk 文件编制协议（AFP(苹果归档协议))</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">550/UDP</td>
+<td style="text-align:left">new-rwho, new-who</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">554/TCP,UDP</td>
+<td style="text-align:left">即时流协议 即时流协定</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">556/TCP</td>
+<td style="text-align:left">Brunhoff 的远程文件系统（RFS）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">560/UDP</td>
+<td style="text-align:left">rmonitor, Remote Monitor</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">561/UDP</td>
+<td style="text-align:left">monitor</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">563/TCP,UDP</td>
+<td style="text-align:left">网络新闻传输协议 通过安全套接字层的网络新闻传输协议（NNTPS）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">587/TCP</td>
+<td style="text-align:left">邮件消息提交（简单邮件传输协议，RFC 2476）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">591/TCP</td>
+<td style="text-align:left">FileMaker 6.0（及之后版本）网络共享（HTTP的替代，见80端口）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">593/TCP,UDP</td>
+<td style="text-align:left">HTTP RPC Ep Map（RPC over HTTP, often used by Distributed COM services and Microsoft Exchange Server）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">604/TCP</td>
+<td style="text-align:left">TUNNEL</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">631/TCP,UDP</td>
+<td style="text-align:left">互联网打印协议</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">636/TCP,UDP</td>
+<td style="text-align:left">LDAP over SSL（加密传输，也被称为LDAPS）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">639/TCP,UDP</td>
+<td style="text-align:left">MSDP, 组播源发现协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">646/TCP,UDP</td>
+<td style="text-align:left">LDP, 标签分发协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">647/TCP</td>
+<td style="text-align:left">DHCP故障转移协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">648/TCP</td>
+<td style="text-align:left">RRP( Registry Registrar Protocol)，注册表注册协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">652/TCP</td>
+<td style="text-align:left">DTCP(Dynamic Tunnel Configuration Protocol)，动态主机设置协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">654/UDP</td>
+<td style="text-align:left">AODV(Ad hoc On-Demand Distance Vector)，无线自组网按需平面距离向量路由协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">665/TCP</td>
+<td style="text-align:left">sun-dr, Remote Dynamic Reconfiguration</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">666/UDP</td>
+<td style="text-align:left">毁灭战士，计算机平台上的一系列第一人称射击游戏。</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">674/TCP</td>
+<td style="text-align:left">ACAP(Application Configuration Access Protocol)，应用配置访问协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">691/TCP</td>
+<td style="text-align:left">MS Exchange Routing</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">692/TCP</td>
+<td style="text-align:left">Hyperwave-ISP</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">694/UDP</td>
+<td style="text-align:left">用于带有高可用性的聚类的心跳服务</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">695/TCP</td>
+<td style="text-align:left">IEEE-MMS-SSL</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">698/UDP</td>
+<td style="text-align:left">OLSR(Optimized Link State Routing)，优化链路状态路由协议</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">699/TCP</td>
+<td style="text-align:left">Access Network</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">700/TCP</td>
+<td style="text-align:left">EPP, 可扩展供应协议</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">701/TCP</td>
+<td style="text-align:left">LMP,链路管理协议</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">702/TCP</td>
+<td style="text-align:left">IRIS over BEEP</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">706/TCP</td>
+<td style="text-align:left">SILC, Secure Internet Live Conferencing</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">711/TCP</td>
+<td style="text-align:left">TDP, 标签分发协议</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">712/TCP</td>
+<td style="text-align:left">TBRPF, Topology Broadcast based on Reverse-Path Forwarding</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">720/TCP</td>
+<td style="text-align:left">SMQP, Simple Message Queue Protocol</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">749/TCP, UDP</td>
+<td style="text-align:left">kerberos-adm, Kerberos administration</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">750/UDP</td>
+<td style="text-align:left">Kerberos version IV</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">782/TCP</td>
+<td style="text-align:left">Conserver serial-console management server</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">829/TCP</td>
+<td style="text-align:left">证书管理协议（CMP）[2]</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">860/TCP</td>
+<td style="text-align:left">ISCSI，Internet小型计算机系统接口</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">873/TCP</td>
+<td style="text-align:left">Rsync ，文件同步协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">901/TCP</td>
+<td style="text-align:left">Samba 网络管理工具(SWAT)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">902</td>
+<td style="text-align:left">VMware服务器控制台[3]</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">904</td>
+<td style="text-align:left">VMware服务器替代（如果902端口已被占用）</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">911/TCP</td>
+<td style="text-align:left">Network Console on Acid（NCA） - local tty redirection over OpenSSH</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">981/TCP</td>
+<td style="text-align:left">Check Point Remote HTTPS management for firewall devices running embedded Checkpoint Firewall-1 software</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">989/TCP,UDP</td>
+<td style="text-align:left">FTP Protocol (data) over TLS/SSL</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">990/TCP,UDP</td>
+<td style="text-align:left">FTP Protocol (control) over TLS/SSL</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">991/TCP,UDP</td>
+<td style="text-align:left">NAS (Netnews Admin System)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">992/TCP,UDP</td>
+<td style="text-align:left">基于TLS / SSL的Telnet协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">993/TCP</td>
+<td style="text-align:left">基于 传输层安全性协议的因特网信息访问协议 (加密传输)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">995/TCP</td>
+<td style="text-align:left">基于 传输层安全性协议的邮局协议 (加密传输)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">端口</td>
+<td style="text-align:left">描述</td>
+<td style="text-align:left">状态</td>
+</tr>
+<tr>
+<td style="text-align:left">1025/tcp</td>
+<td style="text-align:left">NFS-or-IIS</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1026/tcp</td>
+<td style="text-align:left">通常用于微软Distributed COM服务器</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1029/tcp</td>
+<td style="text-align:left">通常用于微软Distributed COM服务器</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1058/tcp</td>
+<td style="text-align:left">nim IBM AIX</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1059/tcp</td>
+<td style="text-align:left">nimreg</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1080/tcp</td>
+<td style="text-align:left">SOCKS代理</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1099/tcp,udp</td>
+<td style="text-align:left">Java远程方法调用 Registry</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1109/tcp</td>
+<td style="text-align:left">Kerberos POP</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">1140/tcp</td>
+<td style="text-align:left">AutoNOC</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1167/udp</td>
+<td style="text-align:left">phone, conference calling</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">1176/tcp</td>
+<td style="text-align:left">Perceptive Automation Indigo home control server</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1182/tcp,udp</td>
+<td style="text-align:left">AcceleNet</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1194/udp</td>
+<td style="text-align:left">OpenVPN</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1198/tcp,udp</td>
+<td style="text-align:left">The cajo project Free dynamic transparent distributed computing in Java</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1200/udp</td>
+<td style="text-align:left">Steam</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1214/tcp</td>
+<td style="text-align:left">Kazaa</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1223/tcp,udp</td>
+<td style="text-align:left">TGP: “TrulyGlobal Protocol” aka “The Gur Protocol”</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1241/tcp,udp</td>
+<td style="text-align:left">Nessus Security Scanner</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1248/tcp</td>
+<td style="text-align:left">NSClient/NSClient++/NC_Net (Nagios)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1270/tcp,udp</td>
+<td style="text-align:left">Microsoft Operations Manager 2005 agent (MOM 2005)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1311/tcp</td>
+<td style="text-align:left">Dell Open Manage Https Port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1313/tcp</td>
+<td style="text-align:left">Xbiim (Canvii server) Port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1337/tcp</td>
+<td style="text-align:left">WASTE Encrypted File Sharing Program</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1352/tcp</td>
+<td style="text-align:left">IBM IBM Lotus Notes/Domino RPC</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1387/tcp,udp</td>
+<td style="text-align:left">Computer Aided Design Software Inc LM (cadsi-lm )</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1414/tcp</td>
+<td style="text-align:left">IBM MQSeries</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1431/tcp</td>
+<td style="text-align:left">RGTP</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1433/tcp,udp</td>
+<td style="text-align:left">Microsoft SQL 数据库系统</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1434/tcp,udp</td>
+<td style="text-align:left">Microsoft SQL 活动监视器</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1494/tcp</td>
+<td style="text-align:left">思杰系统 ICA Client</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1512/tcp,udp</td>
+<td style="text-align:left">WINS</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">1521/tcp</td>
+<td style="text-align:left">nCube License Manager</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1521/tcp</td>
+<td style="text-align:left">Oracle数据库 default listener, in future releases official port 2483</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1524/tcp,udp</td>
+<td style="text-align:left">ingreslock, ingres</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1526/tcp</td>
+<td style="text-align:left">Oracle数据库 common alternative for listener</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1533/tcp</td>
+<td style="text-align:left">IBM Lotus Sametime IM - Virtual Places Chat</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1547/tcp,udp</td>
+<td style="text-align:left">Laplink</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1550</td>
+<td style="text-align:left">Gadu-Gadu (Direct Client-to-Client)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1581/udp</td>
+<td style="text-align:left">MIL STD 2045-47001 VMF</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1589/udp</td>
+<td style="text-align:left">Cisco VQP (VLAN Query Protocol) / VMPS</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1627</td>
+<td style="text-align:left">iSketch</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1677/tcp</td>
+<td style="text-align:left">Novell GroupWise clients in client/server access mode</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">1701/udp</td>
+<td style="text-align:left">第二层隧道协议, Layer 2 Tunnelling protocol</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">1716/tcp</td>
+<td style="text-align:left">美国陆军系列 MMORPG Default Game Port</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1723/tcp,udp</td>
+<td style="text-align:left">Microsoft 点对点隧道协议 VPN</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1725/udp</td>
+<td style="text-align:left">Valve Steam Client</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1755/tcp,udp</td>
+<td style="text-align:left">MMS (协议) (MMS, ms-streaming)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1761/tcp,udp</td>
+<td style="text-align:left">cft-0</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1761/tcp</td>
+<td style="text-align:left">Novell Zenworks Remote Control utility</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1762-1768/tcp,udp</td>
+<td style="text-align:left">cft-1 to cft-7</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1812/udp</td>
+<td style="text-align:left">radius, 远端用户拨入验证服务 authentication protocol</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">1813/udp</td>
+<td style="text-align:left">radacct, 远端用户拨入验证服务 accounting protocol</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">1863/tcp</td>
+<td style="text-align:left">Windows Live Messenger, MSN</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1900/udp</td>
+<td style="text-align:left">Microsoft 简单服务发现协议 Enables discovery of UPnP devices</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1935/tcp</td>
+<td style="text-align:left">实时消息协议 (RTMP) raw protocol</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1970/tcp,udp</td>
+<td style="text-align:left">Danware Data NetOp Remote Control</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1971/tcp,udp</td>
+<td style="text-align:left">Danware Data NetOp School</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1972/tcp,udp</td>
+<td style="text-align:left">InterSystems Caché</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1975-77/udp</td>
+<td style="text-align:left">Cisco TCO (Documentation)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1984/tcp</td>
+<td style="text-align:left">Big Brother - network monitoring tool</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1985/udp</td>
+<td style="text-align:left">热备份路由器协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">1994/TCP</td>
+<td style="text-align:left">STUN-SDLC protocol for tunneling</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">1998/tcp</td>
+<td style="text-align:left">Cisco X.25 service (XOT)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">2000/tcp,udp</td>
+<td style="text-align:left">Cisco SCCP (Skinny)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2002/tcp</td>
+<td style="text-align:left">Cisco Secure Access Control Server (ACS) for Windows</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2030</td>
+<td style="text-align:left">甲骨文公司 Services for Microsoft Transaction Server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2031/tcp,udp</td>
+<td style="text-align:left">mobrien-chat - Mike O’Brien <a href="mailto:&#x6d;&#x69;&#x6b;&#101;&#64;&#109;&#111;&#98;&#x72;&#x69;&#x65;&#110;&#46;&#99;&#111;&#x6d;" target="_blank" rel="noopener">&#x6d;&#x69;&#x6b;&#101;&#64;&#109;&#111;&#98;&#x72;&#x69;&#x65;&#110;&#46;&#99;&#111;&#x6d;</a> November 2004</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2049/udp</td>
+<td style="text-align:left">nfs, NFS Server</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2049/udp</td>
+<td style="text-align:left">shilp</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2053/tcp</td>
+<td style="text-align:left">knetd, Kerberos de-multiplexor</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">2056/udp</td>
+<td style="text-align:left">文明IV multiplayer</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2073/tcp,udp</td>
+<td style="text-align:left">DataReel Database</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2074/tcp,udp</td>
+<td style="text-align:left">Vertel VMF SA (i.e. App.. SpeakFreely)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2082/tcp</td>
+<td style="text-align:left">Infowave Mobility Server</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2082/tcp</td>
+<td style="text-align:left">CPanel, default port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2083/tcp</td>
+<td style="text-align:left">Secure Radius Service (radsec)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2083/tcp</td>
+<td style="text-align:left">CPanel default SSL port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2086/tcp</td>
+<td style="text-align:left">GNUnet</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2086/tcp</td>
+<td style="text-align:left">CPanel default port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2087/tcp</td>
+<td style="text-align:left">CPanel default SSL port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2095/tcp</td>
+<td style="text-align:left">CPanel default webmail port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2096/tcp</td>
+<td style="text-align:left">CPanel default SSL webmail port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2161/tcp</td>
+<td style="text-align:left">问号-APC Agent</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2181/tcp,udp</td>
+<td style="text-align:left">EForward-document transport system</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2200/tcp</td>
+<td style="text-align:left">Tuxanci game server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2219/tcp,udp</td>
+<td style="text-align:left">NetIQ NCAP Protocol</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2220/tcp,udp</td>
+<td style="text-align:left">NetIQ End2End</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2222/tcp</td>
+<td style="text-align:left">DirectAdmin’s default port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2222/udp</td>
+<td style="text-align:left">Microsoft Office OS X antipiracy network monitor [1]</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2301/tcp</td>
+<td style="text-align:left">HP System Management Redirect to port 2381</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2302/udp</td>
+<td style="text-align:left">武装突袭 multiplayer (default for game)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2302/udp</td>
+<td style="text-align:left">最后一战：战斗进化 multiplayer</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2303/udp</td>
+<td style="text-align:left">武装突袭 multiplayer (default for server reporting) (default port for game +1)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2305/udp</td>
+<td style="text-align:left">武装突袭 multiplayer (default for VoN) (default port for game +3)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2369/tcp</td>
+<td style="text-align:left">Default port for BMC软件公司 CONTROL-M/Server - Configuration Agent port number - though often changed during installation</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2370/tcp</td>
+<td style="text-align:left">Default port for BMC软件公司 CONTROL-M/Server - Port utilized to allow the CONTROL-M/Enterprise Manager to connect to the CONTROL-M/Server - though often changed during installation</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2381/tcp</td>
+<td style="text-align:left">HP Insight Manager default port for webserver</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2404/tcp</td>
+<td style="text-align:left">IEC 60870-5-104</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2427/udp</td>
+<td style="text-align:left">Cisco MGCP</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2447/tcp,udp</td>
+<td style="text-align:left">ovwdb - OpenView Network Node Manager (NNM) daemon</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2483/tcp,udp</td>
+<td style="text-align:left">Oracle数据库 listening port for unsecure client connections to the listener, replaces port 1521</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2484/tcp,udp</td>
+<td style="text-align:left">Oracle数据库 listening port for SSL client connections to the listener</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2546/tcp,udp</td>
+<td style="text-align:left">Vytal Vault - Data Protection Services</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2593/tcp,udp</td>
+<td style="text-align:left">RunUO - 网络创世纪 server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2598/tcp</td>
+<td style="text-align:left">new ICA - when Session Reliability is enabled, TCP port 2598 replaces port 1494</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2612/tcp,udp</td>
+<td style="text-align:left">QPasa from MQSoftware</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2710/tcp</td>
+<td style="text-align:left">XBT Bittorrent Tracker</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2710/udp</td>
+<td style="text-align:left">XBT Bittorrent Tracker experimental UDP tracker extension</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2710/tcp</td>
+<td style="text-align:left">Knuddels.de</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2735/tcp,udp</td>
+<td style="text-align:left">NetIQ Monitor Console</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2809/tcp</td>
+<td style="text-align:left">corbaloc:iiop URL, per the CORBA 3.0.3 specification.Also used by IBM IBM WebSphere Application Server Node Agent</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2809/udp</td>
+<td style="text-align:left">corbaloc:iiop URL, per the CORBA 3.0.3 specification.</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2944/udp</td>
+<td style="text-align:left">Megaco Text H.248</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2945/udp</td>
+<td style="text-align:left">Megaco Binary (ASN.1) H.248</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2948/tcp,udp</td>
+<td style="text-align:left">无线应用协议-push 彩信 (MMS)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2949/tcp,udp</td>
+<td style="text-align:left">无线应用协议-pushsecure 彩信 (MMS)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">2967/tcp</td>
+<td style="text-align:left">Symantec AntiVirus Corporate Edition</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3000/tcp</td>
+<td style="text-align:left">Miralix License server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3000/udp</td>
+<td style="text-align:left">Distributed Interactive Simulation (DIS), modifiable default port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3000/tcp</td>
+<td style="text-align:left">Puma Web Server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3001/tcp</td>
+<td style="text-align:left">Miralix Phone Monitor</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3002/tcp</td>
+<td style="text-align:left">Miralix CSTA</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3003/tcp</td>
+<td style="text-align:left">Miralix GreenBox API</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3004/tcp</td>
+<td style="text-align:left">Miralix InfoLink</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3006/tcp</td>
+<td style="text-align:left">Miralix SMS Client Connector</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3007/tcp</td>
+<td style="text-align:left">Miralix OM Server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3025/tcp</td>
+<td style="text-align:left">netpd.org</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3050/tcp,udp</td>
+<td style="text-align:left">gds_db (Interbase/Firebird)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3074/tcp,udp</td>
+<td style="text-align:left">Xbox Live</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3128/tcp</td>
+<td style="text-align:left">超文本传输协议 used by Web缓存s and the default port for the Squid (软件)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3260/tcp</td>
+<td style="text-align:left">ISCSI target</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3268/tcp</td>
+<td style="text-align:left">msft-gc, Microsoft Global Catalog (轻型目录访问协议 service which contains data from Active Directory forests)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3269/tcp</td>
+<td style="text-align:left">msft-gc-ssl, Microsoft Global Catalog over SSL (similar to port 3268, 轻型目录访问协议 over 传输层安全性协议 version)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3300/tcp</td>
+<td style="text-align:left">TripleA game server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3305/tcp,udp</td>
+<td style="text-align:left">ODETTE-FTP</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3306/tcp,udp</td>
+<td style="text-align:left">MySQL数据库系统</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3333/tcp</td>
+<td style="text-align:left">Network Caller ID server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3386/tcp,udp</td>
+<td style="text-align:left">GTP’ 3GPP GSM/通用移动通讯系统 CDR logging protocol</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3389/tcp</td>
+<td style="text-align:left">远程桌面协议（RDP）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3396/tcp</td>
+<td style="text-align:left">Novell NDPS Printer Agent</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3689/tcp</td>
+<td style="text-align:left">DAAP Digital Audio Access Protocol used by 苹果公司 ITunes</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3690/tcp</td>
+<td style="text-align:left">Subversion version control system</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3702/tcp,udp</td>
+<td style="text-align:left">Web Services Dynamic Discovery (WS-Discovery), used by various components of Windows Vista</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3724/tcp</td>
+<td style="text-align:left">魔兽世界 Online gaming MMORPG</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3784/tcp,udp</td>
+<td style="text-align:left">Ventrilo VoIP program used by Ventrilo</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3785/udp</td>
+<td style="text-align:left">Ventrilo VoIP program used by Ventrilo</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3868 tcp,udp</td>
+<td style="text-align:left">Diameter base protocol</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3872/tcp</td>
+<td style="text-align:left">Oracle Management Remote Agent</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3899/tcp</td>
+<td style="text-align:left">Remote Administrator</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3900/tcp</td>
+<td style="text-align:left">Unidata UDT OS udt_os</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">3945/tcp</td>
+<td style="text-align:left">Emcads server service port, a Giritech product used by G/On</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4000/tcp</td>
+<td style="text-align:left">暗黑破坏神II game NoMachine Network Server (nxd)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4007/tcp</td>
+<td style="text-align:left">PrintBuzzer printer monitoring socket server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4089/tcp,udp</td>
+<td style="text-align:left">OpenCORE Remote Control Service</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4093/tcp,udp</td>
+<td style="text-align:left">PxPlus Client server interface ProvideX</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4096/udp</td>
+<td style="text-align:left">Bridge-Relay Element ASCOM</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4100</td>
+<td style="text-align:left">WatchGuard Authentication Applet - default port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4111/tcp,udp</td>
+<td style="text-align:left">Xgrid</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4111/tcp</td>
+<td style="text-align:left">SharePoint - 默认管理端口</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4226/tcp,udp</td>
+<td style="text-align:left">Aleph One (computer game)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4224/tcp</td>
+<td style="text-align:left">思科系统 CDP Cisco discovery Protocol</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4569/udp</td>
+<td style="text-align:left">Inter-Asterisk eXchange</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4662/tcp</td>
+<td style="text-align:left">OrbitNet Message Service</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4662/tcp</td>
+<td style="text-align:left">通常用于EMule</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4664/tcp</td>
+<td style="text-align:left">Google桌面搜索</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4672/udp</td>
+<td style="text-align:left">EMule - 常用端口</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4894/tcp</td>
+<td style="text-align:left">LysKOM Protocol A</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">4899/tcp</td>
+<td style="text-align:left">Radmin 远程控制工具</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5000/tcp</td>
+<td style="text-align:left">commplex-main</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5000/tcp</td>
+<td style="text-align:left">UPnP - Windows network device interoperability</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5000/tcp,udp</td>
+<td style="text-align:left">VTun - 虚拟专用网 软件</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5001/tcp,udp</td>
+<td style="text-align:left">Iperf (Tool for measuring TCP and UDP bandwidth performance)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5001/tcp</td>
+<td style="text-align:left">Slingbox及Slingplayer</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5003/tcp</td>
+<td style="text-align:left">FileMaker Filemaker Pro</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5004/udp</td>
+<td style="text-align:left">实时传输协议实时传输协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5005/udp</td>
+<td style="text-align:left">实时传输协议实时传输协议</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5031/tcp,udp</td>
+<td style="text-align:left">AVM CAPI-over-TCP (综合业务数字网 over 以太网 tunneling)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5050/tcp</td>
+<td style="text-align:left">Yahoo! Messenger</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5051/tcp</td>
+<td style="text-align:left">ita-agent Symantec Intruder Alert</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5060/tcp,udp</td>
+<td style="text-align:left">会话发起协议 (SIP)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5061/tcp</td>
+<td style="text-align:left">会话发起协议 (SIP) over 传输层安全性协议 (TLS)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5093/udp</td>
+<td style="text-align:left">SPSS License Administrator (SPSS)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5104/tcp</td>
+<td style="text-align:left">IBM NetCOOL / IMPACT HTTP Service</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5106/tcp</td>
+<td style="text-align:left">A-Talk Common connection</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5107/tcp</td>
+<td style="text-align:left">A-Talk 远程服务器连接</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5110/tcp</td>
+<td style="text-align:left">ProRat Server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5121/tcp</td>
+<td style="text-align:left">无冬之夜</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5176/tcp</td>
+<td style="text-align:left">ConsoleWorks default UI interface</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5190/tcp</td>
+<td style="text-align:left">ICQ and AIM (应用程序)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5222/tcp</td>
+<td style="text-align:left">XMPP/Jabber - client connection</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5223/tcp</td>
+<td style="text-align:left">XMPP/Jabber - default port for SSL Client Connection</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5269/tcp</td>
+<td style="text-align:left">XMPP/Jabber - server connection</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5351/tcp,udp</td>
+<td style="text-align:left">NAT Port Mapping Protocol - client-requested configuration for inbound connections through 网络地址转换</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5353/udp</td>
+<td style="text-align:left">mDNS - multicastDNS</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">5402/tcp,udp</td>
+<td style="text-align:left">StarBurst AutoCast MFTP</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5405/tcp,udp</td>
+<td style="text-align:left">NetSupport</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5421/tcp,udp</td>
+<td style="text-align:left">Net Support 2</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5432/tcp</td>
+<td style="text-align:left">PostgreSQL database system</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5445/udp</td>
+<td style="text-align:left">思科系统 Vidéo VT Advantage</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5495/tcp</td>
+<td style="text-align:left">Applix TM1 Admin server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5498/tcp</td>
+<td style="text-align:left">Hotline tracker server connection</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5499/udp</td>
+<td style="text-align:left">Hotline tracker server discovery</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5500/tcp</td>
+<td style="text-align:left">VNC remote desktop protocol - for incoming listening viewer, Hotline control connection</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5501/tcp</td>
+<td style="text-align:left">Hotline file transfer connection</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5517/tcp</td>
+<td style="text-align:left">Setiqueue Proxy server client for SETI@home project</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5555/tcp</td>
+<td style="text-align:left">Freeciv multiplay port for versions up to 2.0, 惠普 Data Protector, 会话通告协议</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5556/tcp</td>
+<td style="text-align:left">Freeciv multiplay port</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5631/tcp</td>
+<td style="text-align:left">赛门铁克 pcAnywhere</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5632/udp</td>
+<td style="text-align:left">赛门铁克 pcAnywhere</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5666/tcp</td>
+<td style="text-align:left">NRPE (Nagios)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5667/tcp</td>
+<td style="text-align:left">NSCA (Nagios)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5800/tcp</td>
+<td style="text-align:left">VNC remote desktop protocol - for use over 超文本传输协议</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5814/tcp,udp</td>
+<td style="text-align:left">惠普 Support Automation (HP OpenView Self-Healing Services)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">5900/tcp</td>
+<td style="text-align:left">VNC remote desktop protocol (used by ARD)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6000/tcp</td>
+<td style="text-align:left">X窗口系统 - used between an X client and server over the network</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6001/udp</td>
+<td style="text-align:left">X窗口系统 - used between an X client and server over the network</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6005/tcp</td>
+<td style="text-align:left">Default port for BMC软件公司 CONTROL-M/Server - Socket Port number used for communication between CONTROL-M processes - though often changed during installation</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6050/tcp</td>
+<td style="text-align:left">Brightstor Arcserve Backup</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6051/tcp</td>
+<td style="text-align:left">Brightstor Arcserve Backup</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6100/tcp</td>
+<td style="text-align:left">Vizrt System</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6110/tcp,udp</td>
+<td style="text-align:left">softcm HP SoftBench CM</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6111/tcp,udp</td>
+<td style="text-align:left">spc HP SoftBench Sub-Process Control</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6112/tcp</td>
+<td style="text-align:left">dtspcd - a network daemon that accepts requests from clients to execute commands and launch applications remotely</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6112/tcp</td>
+<td style="text-align:left">暴雪娱乐’s 暴雪战网 gaming service, ArenaNet gaming service</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6129/tcp</td>
+<td style="text-align:left">Dameware Remote Control</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6257/udp</td>
+<td style="text-align:left">WinMX （参见6699端口）</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6346/tcp,udp</td>
+<td style="text-align:left">gnutella-svc (FrostWire, LimeWire, Bearshare, etc.)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6347/tcp,udp</td>
+<td style="text-align:left">gnutella-rtr</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6379/tcp</td>
+<td style="text-align:left">Redis - Redis</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6444/tcp,udp</td>
+<td style="text-align:left">Oracle Grid Engine - Qmaster Service</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6445/tcp,udp</td>
+<td style="text-align:left">Oracle Grid Engine - Execution Service</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6502/tcp,udp</td>
+<td style="text-align:left">Danware Data NetOp Remote Control</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6522/tcp</td>
+<td style="text-align:left">Gobby (and other libobby-based software)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6543/udp</td>
+<td style="text-align:left">Jetnet - default port that the Paradigm Research &amp; Development Jetnet protocol communicates on</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6566/tcp</td>
+<td style="text-align:left">SANE (Scanner Access Now Easy) - SANE network scanner daemon</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6600/tcp</td>
+<td style="text-align:left">Music Playing Daemon (MPD)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6619/tcp,udp</td>
+<td style="text-align:left">ODETTE-FTP over TLS/SSL</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6665-6669/tcp</td>
+<td style="text-align:left">IRC</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6679/tcp</td>
+<td style="text-align:left">IRC SSL （安全互联网中继聊天） - 通常使用的端口</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6697/tcp</td>
+<td style="text-align:left">IRC SSL （安全互联网中继聊天） - 通常使用的端口</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6699/tcp</td>
+<td style="text-align:left">WinMX （参见6257端口）</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6881-6999/tcp,udp</td>
+<td style="text-align:left">BitTorrent 通常使用的端口</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6891-6900/tcp,udp</td>
+<td style="text-align:left">Windows Live Messenger （文件传输）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6901/tcp,udp</td>
+<td style="text-align:left">Windows Live Messenger （语音）</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6969/tcp</td>
+<td style="text-align:left">acmsoda</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">6969/tcp</td>
+<td style="text-align:left">BitTorrent tracker port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7000/tcp</td>
+<td style="text-align:left">Default port for Azureus’s built in 超文本传输安全协议 BitTorrent tracker</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7001/tcp</td>
+<td style="text-align:left">Default port for BEA WebLogic Server’s 超文本传输协议 server - though often changed during installation</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7002/tcp</td>
+<td style="text-align:left">Default port for BEA WebLogic Server’s 超文本传输安全协议 server - though often changed during installation</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7005/tcp,udp</td>
+<td style="text-align:left">Default port for BMC软件公司 CONTROL-M/Server and CONTROL-M/Agent’s - Agent to Server port though often changed during installation</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7006/tcp,udp</td>
+<td style="text-align:left">Default port for BMC软件公司 CONTROL-M/Server and CONTROL-M/Agent’s - Server to Agent port though often changed during installation</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7010/tcp</td>
+<td style="text-align:left">Default port for Cisco AON AMC (AON Management Console) [2]</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7025/tcp</td>
+<td style="text-align:left">Zimbra - lmtp [mailbox] - local mail delivery</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7047/tcp</td>
+<td style="text-align:left">Zimbra - conversion server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7171/tcp</td>
+<td style="text-align:left">Tibia</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">7306/tcp</td>
+<td style="text-align:left">Zimbra - mysql [mailbox]</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7307/tcp</td>
+<td style="text-align:left">Zimbra - mysql [logger] - logger</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7312/udp</td>
+<td style="text-align:left">Sibelius License Server port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7670/tcp</td>
+<td style="text-align:left">BrettSpielWelt BSW Boardgame Portal</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">7777/tcp</td>
+<td style="text-align:left">Default port used by Windows backdoor program tini.exe</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8000/tcp</td>
+<td style="text-align:left">iRDMI - often mistakenly used instead of port 8080 (The Internet Assigned Numbers Authority (iana.org) officially lists this port for iRDMI protocol)</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8000/tcp</td>
+<td style="text-align:left">Common port used for internet radio streams such as those using SHOUTcast</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8002/tcp</td>
+<td style="text-align:left">Cisco Systems Unified Call Manager Intercluster Port</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">8008/tcp</td>
+<td style="text-align:left">超文本传输协议 替代端口</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8008/tcp</td>
+<td style="text-align:left">IBM HTTP Server 默认管理端口</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8009/tcp</td>
+<td style="text-align:left">阿帕契族 JServ 协议 v13 (ajp13) 例如：Apache mod_jk Tomcat会使用。</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8010/tcp</td>
+<td style="text-align:left">XMPP/Jabber 文件传输</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8074/tcp</td>
+<td style="text-align:left">Gadu-Gadu</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8080/tcp</td>
+<td style="text-align:left">超文本传输协议 替代端口 （http_alt） - commonly used for 代理服务器 and caching server, or for running a web server as a non-Root user</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8080/tcp</td>
+<td style="text-align:left">Apache Tomcat</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8086/tcp</td>
+<td style="text-align:left">HELM Web Host Automation Windows Control Panel</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8086/tcp</td>
+<td style="text-align:left">Kaspersky AV Control Center TCP Port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8087/tcp</td>
+<td style="text-align:left">Hosting Accelerator Control Panel</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8087/udp</td>
+<td style="text-align:left">Kaspersky AV Control Center UDP Port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8087/tcp</td>
+<td style="text-align:left">英迈 控制面板</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8090/tcp</td>
+<td style="text-align:left">Another 超文本传输协议 Alternate (http_alt_alt) - used as an alternative to port 8080</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8118/tcp</td>
+<td style="text-align:left">Privoxy web proxy - advertisements-filtering web proxy</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8123/tcp</td>
+<td style="text-align:left">Dynmap[4]默认网页端口号(Minecraft在线地图)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8200/tcp</td>
+<td style="text-align:left">GoToMyPC</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8220/tcp</td>
+<td style="text-align:left">Bloomberg</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8222</td>
+<td style="text-align:left">VMware服务器管理用户界面(不安全网络界面)[5]。参见 8333端口</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8291/tcp</td>
+<td style="text-align:left">Winbox - Default port on a MikroTik RouterOS for a Windows application used to administer MikroTik RouterOS</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8294/tcp</td>
+<td style="text-align:left">Bloomberg</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8333</td>
+<td style="text-align:left">VMware 服务器管理用户界面（安全网络界面）[6]。参见8222端口</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8400</td>
+<td style="text-align:left">Commvault Unified Data Management</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8443/tcp</td>
+<td style="text-align:left">英迈 Control Panel</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8500/tcp</td>
+<td style="text-align:left">Adobe ColdFusion Macromedia/Adobe ColdFusion default Webserver port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8501/udp</td>
+<td style="text-align:left">毁灭公爵3D - Default Online Port</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8767/udp</td>
+<td style="text-align:left">TeamSpeak - Default UDP Port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8880</td>
+<td style="text-align:left">IBM WebSphere Application Server 简单对象访问协议 Connector port</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">8881/tcp</td>
+<td style="text-align:left">Atlasz Informatics Research Ltd Secure Application Server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8882/tcp</td>
+<td style="text-align:left">Atlasz Informatics Research Ltd Secure Application Server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8888/tcp,udp</td>
+<td style="text-align:left">NewsEDGE server</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8888/tcp</td>
+<td style="text-align:left">Sun Answerbook 网页服务器 server (deprecated by docs.sun.com)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8888/tcp</td>
+<td style="text-align:left">GNUmp3d HTTP music streaming and web interface port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">8888/tcp</td>
+<td style="text-align:left">英雄大作战 Network Game Server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9000/tcp</td>
+<td style="text-align:left">Buffalo LinkSystem web access</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9000/tcp</td>
+<td style="text-align:left">DBGp</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9000/udp</td>
+<td style="text-align:left">UDPCast</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9000</td>
+<td style="text-align:left">PHP - php-fpm</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9001</td>
+<td style="text-align:left">cisco-xremote router configuration</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9001</td>
+<td style="text-align:left">Tor network default port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9001/tcp</td>
+<td style="text-align:left">DBGp Proxy</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9002</td>
+<td style="text-align:left">Default ElasticSearch port</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">9009/tcp,udp</td>
+<td style="text-align:left">Pichat Server - Peer to peer chat software</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9043/tcp</td>
+<td style="text-align:left">IBM WebSphere Application Server Administration Console secure port</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">9060/tcp</td>
+<td style="text-align:left">IBM WebSphere Application Server Administration Console</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">9100/tcp</td>
+<td style="text-align:left">Jetdirect HP Print Services</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9110/udp</td>
+<td style="text-align:left">SSMP Message protocol</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9101</td>
+<td style="text-align:left">Bacula Director</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9102</td>
+<td style="text-align:left">Bacula File Daemon</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9103</td>
+<td style="text-align:left">Bacula Storage Daemon</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9119/TCP,UDP</td>
+<td style="text-align:left">Mxit Instant Messenger</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9535/tcp</td>
+<td style="text-align:left">man, Remote Man Server</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">9535</td>
+<td style="text-align:left">mngsuite - Management Suite Remote Control</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9800/tcp,udp</td>
+<td style="text-align:left">基于Web的分布式编写和版本控制 Source Port</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9800</td>
+<td style="text-align:left">WebCT e-learning portal</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9999</td>
+<td style="text-align:left">Hydranode - edonkey2000 telnet control port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">9999</td>
+<td style="text-align:left">Urchin Web Analytics</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">10000</td>
+<td style="text-align:left">Webmin - web based Linux admin tool</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">10000</td>
+<td style="text-align:left">BackupExec</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">10008</td>
+<td style="text-align:left">Octopus Multiplexer - CROMP protocol primary port, hoople.org</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">10017</td>
+<td style="text-align:left">AIX,NeXT, HPUX - rexd daemon control port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">10024/tcp</td>
+<td style="text-align:left">Zimbra - smtp [mta] - to amavis from postfix</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">10025/tcp</td>
+<td style="text-align:left">Ximbra - smtp [mta] - back to postfix from amavis</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">10050/tcp</td>
+<td style="text-align:left">Zabbix-Agent</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">10051/tcp</td>
+<td style="text-align:left">Zabbix-Server</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">10113/tcp,udp</td>
+<td style="text-align:left">NetIQ Endpoint</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">10114/tcp,udp</td>
+<td style="text-align:left">NetIQ Qcheck</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">10115/tcp,udp</td>
+<td style="text-align:left">NetIQ Endpoint</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">10116/tcp,udp</td>
+<td style="text-align:left">NetIQ VoIP Assessor</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">10480</td>
+<td style="text-align:left">SWAT 4 Dedicated Server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">11211</td>
+<td style="text-align:left">Memcached</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">11235</td>
+<td style="text-align:left">Savage:Battle for Newerth Server Hosting</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">11294</td>
+<td style="text-align:left">Blood Quest Online Server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">11371</td>
+<td style="text-align:left">PGP HTTP Keyserver</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">11576</td>
+<td style="text-align:left">IPStor Server management communication</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">12035/udp</td>
+<td style="text-align:left">Linden Lab viewer to sim</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">12345</td>
+<td style="text-align:left">NetBus - remote administration tool (often 特洛伊木马 (计算机)). Also used by NetBuster. Little Fighter 2 (TCP).</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">12975/tcp</td>
+<td style="text-align:left">LogMeIn Hamachi (VPN tunnel software;also port 32976)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">13000-13050/udp</td>
+<td style="text-align:left">Linden Lab viewer to sim</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">13720/tcp</td>
+<td style="text-align:left">赛门铁克 NetBackup - bprd (formerly VERITAS)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">13721/tcp</td>
+<td style="text-align:left">赛门铁克 NetBackup - bpdbm (formerly VERITAS)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">13724/tcp</td>
+<td style="text-align:left">赛门铁克 Network Utility - vnet (formerly VERITAS)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">13782/tcp</td>
+<td style="text-align:left">赛门铁克 NetBackup - bpcd (formerly VERITAS)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">13783/tcp</td>
+<td style="text-align:left">赛门铁克 VOPIED protocol (formerly VERITAS)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">14567/udp</td>
+<td style="text-align:left">战地风云1942 and mods</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">15000/tcp</td>
+<td style="text-align:left">Bounce (网络)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">15000/tcp</td>
+<td style="text-align:left">韦诺之战</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">15567/udp</td>
+<td style="text-align:left">战地风云：越南 and mods</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">15345/udp</td>
+<td style="text-align:left">XPilot</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">16000/tcp</td>
+<td style="text-align:left">Bounce (网络)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">16080/tcp</td>
+<td style="text-align:left">MacOS Server performance cache for 超文本传输协议[7]</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">16384/udp</td>
+<td style="text-align:left">Iron Mountain Digital - online backup</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">16567/udp</td>
+<td style="text-align:left">战地2 and mods</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">17788/udp</td>
+<td style="text-align:left">PPS网络电视</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">19132/tcp</td>
+<td style="text-align:left">Minecraft基岩版默认服务器端口号</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">19226/tcp</td>
+<td style="text-align:left">熊猫 (消歧义) AdminSecure Communication Agent</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">19638/tcp</td>
+<td style="text-align:left">Ensim Control Panel</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">19813/tcp</td>
+<td style="text-align:left">4D database Client Server Communication</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">20000</td>
+<td style="text-align:left">Usermin - 基于网络的用户工具</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">20720/tcp</td>
+<td style="text-align:left">Symantec i3 Web GUI server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">22347/tcp,udp</td>
+<td style="text-align:left">WibuKey - default port for WibuKey Network Server of WIBU-SYSTEMS AG</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">22350/tcp,udp</td>
+<td style="text-align:left">CodeMeter - default port for CodeMeter Server of WIBU-SYSTEMS AG</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">24554/tcp,udp</td>
+<td style="text-align:left">binkp - FidoNet mail transfers over TCP/IP协议族</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">24800</td>
+<td style="text-align:left">Synergy：keyboard/mouse sharing software</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">24842</td>
+<td style="text-align:left">StepMania：Online: 劲爆热舞 Simulator</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">25565/tcp</td>
+<td style="text-align:left">Minecraft默认服务器端口号</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">25999/tcp</td>
+<td style="text-align:left">Xfire</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">26000/tcp,udp</td>
+<td style="text-align:left">Id Software’s Quake server,</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">26000/tcp</td>
+<td style="text-align:left">CCP Games’s 星战前夜 Online gaming MMORPG,</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">27000/udp</td>
+<td style="text-align:left">(through 27006) Id Software’s 雷神世界 master server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">27010/udp</td>
+<td style="text-align:left">Half-Life及其修改版，如反恐精英系列</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">27015/udp</td>
+<td style="text-align:left">Half-Life及其修改版，如反恐精英系列</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">27374</td>
+<td style="text-align:left">Sub7’s default port. Most 脚本小子s do not change the default port.</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">27500/udp</td>
+<td style="text-align:left">(through 27900) Id Software’s 雷神世界</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">27888/udp</td>
+<td style="text-align:left">Kaillera server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">27900</td>
+<td style="text-align:left">(through 27901) 任天堂 任天堂Wi-Fi连接</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">27901/udp</td>
+<td style="text-align:left">(through 27910) Id Software’s 雷神之锤II master server</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">27960/udp</td>
+<td style="text-align:left">(through 27969) 动视’s Enemy Territory and Id Software’s 雷神之锤III竞技场 and Quake III and some ioquake3 derived games</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">28910</td>
+<td style="text-align:left">任天堂 任天堂Wi-Fi连接</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">28960</td>
+<td style="text-align:left">决胜时刻2 Common Call of Duty 2 port - (PC Version)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">29900</td>
+<td style="text-align:left">(through 29901) 任天堂 任天堂Wi-Fi连接</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">29920</td>
+<td style="text-align:left">任天堂 任天堂Wi-Fi连接</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">30000</td>
+<td style="text-align:left">Pokemon Netbattle</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">30564/tcp</td>
+<td style="text-align:left">Multiplicity：keyboard/mouse/clipboard sharing software</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">31337/tcp</td>
+<td style="text-align:left">Back Orifice - remote administration tool（often 特洛伊木马 (计算机)）</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">31337/tcp</td>
+<td style="text-align:left">xc0r3 - xc0r3 security antivir port</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">31415</td>
+<td style="text-align:left">ThoughtSignal - Server Communication Service（often Informational）</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">31456-31458/tcp</td>
+<td style="text-align:left">TetriNET ports (in order: IRC, game, and spectating)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">32245/tcp</td>
+<td style="text-align:left">MMTSG-mutualed over MMT (encrypted transmission)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">33434</td>
+<td style="text-align:left">Traceroute</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">37777/tcp</td>
+<td style="text-align:left">Digital Video Recorder hardware</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">36963</td>
+<td style="text-align:left">Counter Strike 2D multiplayer port (2D clone of popular CounterStrike computer game)</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">40000</td>
+<td style="text-align:left">SafetyNET p</td>
+<td style="text-align:left">官方</td>
+</tr>
+<tr>
+<td style="text-align:left">40523</td>
+<td style="text-align:left">data packets</td>
+<td style="text-align:left">不确定 6</td>
+</tr>
+<tr>
+<td style="text-align:left">43594-43595/tcp</td>
+<td style="text-align:left">RuneScape</td>
+<td style="text-align:left">非官方</td>
+</tr>
+<tr>
+<td style="text-align:left">47808</td>
+<td style="text-align:left">BACnet Building Automation and Control Networks</td>
+<td style="text-align:left">官方</td>
+</tr>
+</tbody>
+</table>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://zh.wikipedia.org/wiki/TCP/UDP%E7%AB%AF%E5%8F%A3%E5%88%97%E8%A1%A8" target="_blank" rel="noopener">维基百科-TCP/UDP端口列表</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/知名端口/" rel="tag"># 知名端口</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/undefined.html" rel="next" title="Hexo博客小知识">
+                <i class="fa fa-chevron-left"></i> Hexo博客小知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/ftp.html" rel="prev" title="ftp协议">
+                ftp协议 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">whilewell</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知名端口号"><span class="nav-number">2.</span> <span class="nav-text">知名端口号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019-5 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">whilewell</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
