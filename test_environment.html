@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="2019年5月25日debian虚拟机  配置英文系统字体文件：/etc/default/locale内容：LANG=”en_US.UTF-8”LANGUAGE=”en_US:en”注意：配置完成后重启 安装VMware tools挂载磁盘工具mkdir /mnt/cdrommount /dev/cdrom /mnt/cdrom解压工具包tar zxpf /mnt/cdrom/VMwareTool">
+<meta name="description" content="2019年5月26日配置网卡 2019年5月25日debian虚拟机  配置英文系统字体文件：/etc/default/locale内容：LANG=”en_US.UTF-8”LANGUAGE=”en_US:en”注意：配置完成后重启 安装VMware tools挂载磁盘工具mkdir /mnt/cdrommount /dev/cdrom /mnt/cdrom解压工具包tar zxpf /mnt/c">
 <meta name="keywords" content="环境,测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="测试环境搭建">
 <meta property="og:url" content="http://yoursite.com/test_environment.html">
 <meta property="og:site_name" content="loop">
-<meta property="og:description" content="2019年5月25日debian虚拟机  配置英文系统字体文件：/etc/default/locale内容：LANG=”en_US.UTF-8”LANGUAGE=”en_US:en”注意：配置完成后重启 安装VMware tools挂载磁盘工具mkdir /mnt/cdrommount /dev/cdrom /mnt/cdrom解压工具包tar zxpf /mnt/cdrom/VMwareTool">
+<meta property="og:description" content="2019年5月26日配置网卡 2019年5月25日debian虚拟机  配置英文系统字体文件：/etc/default/locale内容：LANG=”en_US.UTF-8”LANGUAGE=”en_US:en”注意：配置完成后重启 安装VMware tools挂载磁盘工具mkdir /mnt/cdrommount /dev/cdrom /mnt/cdrom解压工具包tar zxpf /mnt/c">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-26T02:04:31.540Z">
+<meta property="og:updated_time" content="2019-05-26T02:19:47.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="测试环境搭建">
-<meta name="twitter:description" content="2019年5月25日debian虚拟机  配置英文系统字体文件：/etc/default/locale内容：LANG=”en_US.UTF-8”LANGUAGE=”en_US:en”注意：配置完成后重启 安装VMware tools挂载磁盘工具mkdir /mnt/cdrommount /dev/cdrom /mnt/cdrom解压工具包tar zxpf /mnt/cdrom/VMwareTool">
+<meta name="twitter:description" content="2019年5月26日配置网卡 2019年5月25日debian虚拟机  配置英文系统字体文件：/etc/default/locale内容：LANG=”en_US.UTF-8”LANGUAGE=”en_US:en”注意：配置完成后重启 安装VMware tools挂载磁盘工具mkdir /mnt/cdrommount /dev/cdrom /mnt/cdrom解压工具包tar zxpf /mnt/c">
 
 
 
@@ -372,15 +372,15 @@
       
 
       
-        <h2 id="2019年5月25日"><a href="#2019年5月25日" class="headerlink" title="2019年5月25日"></a>2019年5月25日</h2><p><strong>debian虚拟机</strong></p>
+        <h2 id="2019年5月26日"><a href="#2019年5月26日" class="headerlink" title="2019年5月26日"></a>2019年5月26日</h2><p><a href>配置网卡</a></p>
+<h2 id="2019年5月25日"><a href="#2019年5月25日" class="headerlink" title="2019年5月25日"></a>2019年5月25日</h2><p><strong>debian虚拟机</strong></p>
 <ol>
 <li><a href="https://www.chenyudong.com/archives/debian-change-locale-language.html" target="_blank" rel="noopener">配置英文系统字体</a><br>文件：/etc/default/locale<br>内容：<br>LANG=”en_US.UTF-8”<br>LANGUAGE=”en_US:en”<br>注意：配置完成后重启</li>
 <li><p>安装VMware tools<br>挂载磁盘工具<br>mkdir /mnt/cdrom<br>mount /dev/cdrom /mnt/cdrom<br>解压工具包<br>tar zxpf /mnt/cdrom/VMwareTools-x.x.x-yyyy.tar.gz<br>在这个过程中可能会有一些权限问题，可以将这个tar包复制到其它目录进行解压<br>解压完成后会有一个目录<br>cd vmware-tools-distrib<br>sudo ./vmware-install.pl<br>执行过程中一直回车就行</p>
 </li>
-<li><p>配置网卡</p>
+<li><p>配置网卡<br>后补充</p>
 </li>
-<li><p>配置VMware 的滴滴声音<br>找了很多中办法，就下面的这种办法有效：<br>vi /etc/inputrc<br>找到set bell-style none 将前面的＃去掉，之后重启系统即可解决声音问题</p>
-</li>
+<li>配置VMware 的滴滴声音<br><del>找了很多中办法，就下面的这种办法有效：<br>vi /etc/inputrc<br>找到set bell-style none 将前面的＃去掉，之后重启系统即可解决声音问题</del><br>完美解决办法：通过终端工具登录该服务器，使用起来更舒服。</li>
 <li><a href="https://jingyan.baidu.com/article/fea4511a22ec88f7ba912566.html" target="_blank" rel="noopener">解决桥接模式下虚拟机ping本机不通的问题</a></li>
 </ol>
 <p><strong>安装终端工具</strong></p>
@@ -432,6 +432,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/debian_config_int.html" rel="prev" title="配置debian虚拟机网卡">
+                配置debian虚拟机网卡 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -507,7 +511,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -529,7 +533,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -562,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019年5月25日"><span class="nav-number">1.</span> <span class="nav-text">2019年5月25日</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019年5月22日"><span class="nav-number">2.</span> <span class="nav-text">2019年5月22日</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019年5月26日"><span class="nav-number">1.</span> <span class="nav-text">2019年5月26日</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019年5月25日"><span class="nav-number">2.</span> <span class="nav-text">2019年5月25日</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019年5月22日"><span class="nav-number">3.</span> <span class="nav-text">2019年5月22日</span></a></li></ol></div>
             
 
           </div>
