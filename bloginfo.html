@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。 Hexo添加站内搜索Hexo开启站内搜索功能1.hexo添加搜索插件2.next主题启用搜索 自定义Hexo博客的文章模板模板目录：scaffolds1234├── scaffolds│   ├── draft.md			//默认的草稿模板│   ├── page.md 		    //默认的页面模板│   └── post.md 			/">
+<meta name="description" content="收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。 Hexo博客文章置顶功能Hexo文章置顶的方法 Hexo添加站内搜索Hexo开启站内搜索功能1.hexo添加搜索插件2.next主题启用搜索 自定义Hexo博客的文章模板模板目录：scaffolds1234├── scaffolds│   ├── draft.md			//默认的草稿模板│   ├── page.md 		    //默认的">
 <meta name="keywords" content="Hexo博客,技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客小知识">
 <meta property="og:url" content="http://yoursite.com/bloginfo.html">
 <meta property="og:site_name" content="loop">
-<meta property="og:description" content="收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。 Hexo添加站内搜索Hexo开启站内搜索功能1.hexo添加搜索插件2.next主题启用搜索 自定义Hexo博客的文章模板模板目录：scaffolds1234├── scaffolds│   ├── draft.md			//默认的草稿模板│   ├── page.md 		    //默认的页面模板│   └── post.md 			/">
+<meta property="og:description" content="收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。 Hexo博客文章置顶功能Hexo文章置顶的方法 Hexo添加站内搜索Hexo开启站内搜索功能1.hexo添加搜索插件2.next主题启用搜索 自定义Hexo博客的文章模板模板目录：scaffolds1234├── scaffolds│   ├── draft.md			//默认的草稿模板│   ├── page.md 		    //默认的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-01T02:47:41.267Z">
+<meta property="og:updated_time" content="2019-06-01T03:36:17.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客小知识">
-<meta name="twitter:description" content="收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。 Hexo添加站内搜索Hexo开启站内搜索功能1.hexo添加搜索插件2.next主题启用搜索 自定义Hexo博客的文章模板模板目录：scaffolds1234├── scaffolds│   ├── draft.md			//默认的草稿模板│   ├── page.md 		    //默认的页面模板│   └── post.md 			/">
+<meta name="twitter:description" content="收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。 Hexo博客文章置顶功能Hexo文章置顶的方法 Hexo添加站内搜索Hexo开启站内搜索功能1.hexo添加搜索插件2.next主题启用搜索 自定义Hexo博客的文章模板模板目录：scaffolds1234├── scaffolds│   ├── draft.md			//默认的草稿模板│   ├── page.md 		    //默认的">
 
 
 
@@ -336,6 +336,7 @@
         
 
         <div class="post-meta">
+              
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -405,6 +406,7 @@
 
       
         <p>收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。</p>
+<h2 id="Hexo博客文章置顶功能"><a href="#Hexo博客文章置顶功能" class="headerlink" title="Hexo博客文章置顶功能"></a>Hexo博客文章置顶功能</h2><p><a href="https://blog.csdn.net/qwerty200696/article/details/79010629" target="_blank" rel="noopener">Hexo文章置顶的方法</a></p>
 <h2 id="Hexo添加站内搜索"><a href="#Hexo添加站内搜索" class="headerlink" title="Hexo添加站内搜索"></a>Hexo添加站内搜索</h2><p><a href="https://www.jianshu.com/p/519b45730824" target="_blank" rel="noopener">Hexo开启站内搜索功能</a><br>1.hexo添加搜索插件<br>2.next主题启用搜索</p>
 <h2 id="自定义Hexo博客的文章模板"><a href="#自定义Hexo博客的文章模板" class="headerlink" title="自定义Hexo博客的文章模板"></a>自定义Hexo博客的文章模板</h2><p>模板目录：scaffolds<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">├── scaffolds</span><br><span class="line">│   ├── draft.md			//默认的草稿模板</span><br><span class="line">│   ├── page.md 		    //默认的页面模板</span><br><span class="line">│   └── post.md 			//默认的文章模板</span><br></pre></td></tr></table></figure></p>
 <p>可以在下面新增自己的模板格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp post.md name.md  //name: 新模板名称</span><br><span class="line">vi name.md  //编辑自己的文章模板</span><br><span class="line">hexo new name &quot;my new blog&quot; //新建文章时使用新模板</span><br></pre></td></tr></table></figure></p>
@@ -581,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo添加站内搜索"><span class="nav-number">1.</span> <span class="nav-text">Hexo添加站内搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义Hexo博客的文章模板"><span class="nav-number">2.</span> <span class="nav-text">自定义Hexo博客的文章模板</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客文章置顶功能"><span class="nav-number">1.</span> <span class="nav-text">Hexo博客文章置顶功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo添加站内搜索"><span class="nav-number">2.</span> <span class="nav-text">Hexo添加站内搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义Hexo博客的文章模板"><span class="nav-number">3.</span> <span class="nav-text">自定义Hexo博客的文章模板</span></a></li></ol></div>
             
 
           </div>
