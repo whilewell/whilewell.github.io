@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="loop">
 <meta property="og:description" content="文章导读白天偶然接触到了廖雪峰写的git教程，随手写下了这个过程记录自己成长的轨迹。 git 教程自己写博客时用的图床是github，昨天在写好多图博客后，准备上传图片的时候，才发现从github上面clone真是慢啊，结果博客文字写差不多了，图片还一个都没有传上去。 【github 下 git clone 特别慢】针对这个问题我从网上检索出一些解决办法，办法中是让修改代理，这些方法尝试后效果并不">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-25T15:55:15.034Z">
+<meta property="og:updated_time" content="2019-07-07T10:33:44.263Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【随笔】 【Git教程】">
 <meta name="twitter:description" content="文章导读白天偶然接触到了廖雪峰写的git教程，随手写下了这个过程记录自己成长的轨迹。 git 教程自己写博客时用的图床是github，昨天在写好多图博客后，准备上传图片的时候，才发现从github上面clone真是慢啊，结果博客文字写差不多了，图片还一个都没有传上去。 【github 下 git clone 特别慢】针对这个问题我从网上检索出一些解决办法，办法中是让修改代理，这些方法尝试后效果并不">
@@ -420,6 +420,28 @@
 <p>【github 下 git clone 特别慢】针对这个问题我从网上检索出一些解决办法，办法中是让修改代理，这些方法尝试后效果并不是太好。然后我就思考，git是否支持仅clone下来一个配置，不包含库中的文件。在这个好奇心驱动下，我了解到了<a href="https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000#0" target="_blank" rel="noopener">廖雪峰写的git教程</a>。</p>
 <p>因为现在的工作中经常接触到git，也积累了不少git的技巧，不过从来没有系统的学习过git，里面一些基本的概念还不是很清楚。从接触到这个教程后发现，这个教程写的真的好，浅显易懂逻辑连贯，很适合初级选手学习，不过这些也是最常用的，学会后，完全可以胜任平时工作中的需要。教程看完了，但还是没有解决我目前遇到的疑问和问题。</p>
 <p>我在网上检索了下其他人用的是哪个图床，多个结果中都推荐了七牛云，推荐它的主要原因是限量免费和稳定，大家既然都推荐它肯动有其优势所在。我准备先试试，使用体验在后续使用过程中慢慢输出吧。</p>
+<h2 id="搭建Git服务器"><a href="#搭建Git服务器" class="headerlink" title="搭建Git服务器"></a>搭建Git服务器</h2><p>在远程仓库一节中，我们讲了远程仓库实际上和本地仓库没啥不同，纯粹为了7x24小时开机并交换大家的修改。</p>
+<p>GitHub就是一个免费托管开源代码的远程仓库。但是对于某些视源代码如生命的商业公司来说，既不想公开源代码，又舍不得给GitHub交保护费，那就只能自己搭建一台Git服务器作为私有仓库使用。</p>
+<p>搭建Git服务器需要准备一台运行Linux的机器，强烈推荐用Ubuntu或Debian，这样，通过几条简单的apt命令就可以完成安装。</p>
+<p>假设你已经有sudo权限的用户账号，下面，正式开始安装。</p>
+<p>第一步，安装git：</p>
+<p>$ sudo apt-get install git<br>第二步，创建一个git用户，用来运行git服务：</p>
+<p>$ sudo adduser git<br>第三步，创建证书登录：</p>
+<p>收集所有需要登录的用户的公钥，就是他们自己的id_rsa.pub文件，把所有公钥导入到/home/git/.ssh/authorized_keys文件里，一行一个。</p>
+<p>第四步，初始化Git仓库：</p>
+<p>先选定一个目录作为Git仓库，假定是/srv/sample.git，在/srv目录下输入命令：</p>
+<p>$ sudo git init –bare sample.git<br>Git就会创建一个裸仓库，裸仓库没有工作区，因为服务器上的Git仓库纯粹是为了共享，所以不让用户直接登录到服务器上去改工作区，并且服务器上的Git仓库通常都以.git结尾。然后，把owner改为git：</p>
+<p>$ sudo chown -R git:git sample.git<br>第五步，禁用shell登录：</p>
+<p>出于安全考虑，第二步创建的git用户不允许登录shell，这可以通过编辑/etc/passwd文件完成。找到类似下面的一行：</p>
+<p>git:x:1001:1001:,,,:/home/git:/bin/bash<br>改为：</p>
+<p>git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell<br>这样，git用户可以正常通过ssh使用git，但无法登录shell，因为我们为git用户指定的git-shell每次一登录就自动退出。</p>
+<p>第六步，克隆远程仓库：</p>
+<p>现在，可以通过git clone命令克隆远程仓库了，在各自的电脑上运行：</p>
+<p>$ git clone git@server:/srv/sample.git<br>Cloning into ‘sample’…<br>warning: You appear to have cloned an empty repository.<br>剩下的推送就简单了。</p>
+<p>管理公钥<br>如果团队很小，把每个人的公钥收集起来放到服务器的/home/git/.ssh/authorized_keys文件里就是可行的。如果团队有几百号人，就没法这么玩了，这时，可以用Gitosis来管理公钥。</p>
+<p>这里我们不介绍怎么玩Gitosis了，几百号人的团队基本都在500强了，相信找个高水平的Linux管理员问题不大。</p>
+<p>管理权限<br>有很多不但视源代码如生命，而且视员工为窃贼的公司，会在版本控制系统里设置一套完善的权限控制，每个人是否有读写权限会精确到每个分支甚至每个目录下。因为Git是为Linux源代码托管而开发的，所以Git也继承了开源社区的精神，不支持权限控制。不过，因为Git支持钩子（hook），所以，可以在服务器端编写一系列脚本来控制提交等操作，达到权限控制的目的。Gitolite就是这个工具。</p>
+<p>这里我们也不介绍Gitolite了，不要把有限的生命浪费到权限斗争中。</p>
 
       
     </div>
@@ -603,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章导读"><span class="nav-number">1.</span> <span class="nav-text">文章导读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-教程"><span class="nav-number">2.</span> <span class="nav-text">git 教程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章导读"><span class="nav-number">1.</span> <span class="nav-text">文章导读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-教程"><span class="nav-number">2.</span> <span class="nav-text">git 教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建Git服务器"><span class="nav-number">3.</span> <span class="nav-text">搭建Git服务器</span></a></li></ol></div>
             
 
           </div>
