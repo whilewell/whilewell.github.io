@@ -50,19 +50,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.5" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.5">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.5">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.5">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.5" color="#222">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="原帖:http://blog.csdn.net/qy532846454/article/details/6806197 内核版本：2.6.34这部分的重点是三个核心的数据结构-邻居表、邻居缓存、代理邻居表，以及NUD状态转移图。      总的来说，要成功添加一条邻居表项，需要满足两个条件：1.　本机使用该表项；2.　对方主机进行了确认。同时，表项的添加引入了NUD(Neighbour Unrea">
+<meta name="description" content="为什么要有锁机制？共享资源被并发使用的时候，当有可能破坏资源的一致性的时候，就需要一种同步机制，保证资源可以被使用正确。 通俗地理解锁机制厕所浴室：一种共享资源爸爸、妈妈、小孩：用户  当有一个人进入厕所后，该资源已经被占用，就会将门锁住。另一个人只能排队等待，直到资源被释放（开门离开），下一个人才能使用。  锁机制概览   名称 定义 特点 应用场景 备注     原子操作（atomic） 所谓">
 <meta name="keywords" content="网络编程, 邻居表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【网络编程】【邻居表】">
 <meta property="og:url" content="http://yoursite.com/net_network_neigh.html">
 <meta property="og:site_name" content="loop">
-<meta property="og:description" content="原帖:http://blog.csdn.net/qy532846454/article/details/6806197 内核版本：2.6.34这部分的重点是三个核心的数据结构-邻居表、邻居缓存、代理邻居表，以及NUD状态转移图。      总的来说，要成功添加一条邻居表项，需要满足两个条件：1.　本机使用该表项；2.　对方主机进行了确认。同时，表项的添加引入了NUD(Neighbour Unrea">
+<meta property="og:description" content="为什么要有锁机制？共享资源被并发使用的时候，当有可能破坏资源的一致性的时候，就需要一种同步机制，保证资源可以被使用正确。 通俗地理解锁机制厕所浴室：一种共享资源爸爸、妈妈、小孩：用户  当有一个人进入厕所后，该资源已经被占用，就会将门锁住。另一个人只能排队等待，直到资源被释放（开门离开），下一个人才能使用。  锁机制概览   名称 定义 特点 应用场景 备注     原子操作（atomic） 所谓">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-02T04:05:24.137Z">
+<meta property="og:updated_time" content="2019-07-03T15:31:48.684Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【网络编程】【邻居表】">
-<meta name="twitter:description" content="原帖:http://blog.csdn.net/qy532846454/article/details/6806197 内核版本：2.6.34这部分的重点是三个核心的数据结构-邻居表、邻居缓存、代理邻居表，以及NUD状态转移图。      总的来说，要成功添加一条邻居表项，需要满足两个条件：1.　本机使用该表项；2.　对方主机进行了确认。同时，表项的添加引入了NUD(Neighbour Unrea">
+<meta name="twitter:description" content="为什么要有锁机制？共享资源被并发使用的时候，当有可能破坏资源的一致性的时候，就需要一种同步机制，保证资源可以被使用正确。 通俗地理解锁机制厕所浴室：一种共享资源爸爸、妈妈、小孩：用户  当有一个人进入厕所后，该资源已经被占用，就会将门锁住。另一个人只能排队等待，直到资源被释放（开门离开），下一个人才能使用。  锁机制概览   名称 定义 特点 应用场景 备注     原子操作（atomic） 所谓">
 
 
 
@@ -99,7 +99,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '5.1.4',
+    version: '5.1.5',
     sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -381,6 +381,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/net_network_neigh.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="net_network_neigh.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -405,38 +415,56 @@
       
 
       
-        <p>原帖:<a href="http://blog.csdn.net/qy532846454/article/details/6806197" target="_blank" rel="noopener">http://blog.csdn.net/qy532846454/article/details/6806197</a></p>
-<p>内核版本：2.6.34<br>这部分的重点是三个核心的数据结构-邻居表、邻居缓存、代理邻居表，以及NUD状态转移图。<br>      总的来说，要成功添加一条邻居表项，需要满足两个条件：1.　本机使用该表项；2.　对方主机进行了确认。同时，表项的添加引入了NUD(Neighbour Unreachability Detection)机制，从创建NUD_NONE到可用NUD_REACHABLE需要经历一系列状态转移，而根据达到两个条件顺序的不同，可以分为两条路线：<br>      先引用再确认-　NUD_NONE -&gt; NUD_INCOMPLETE -&gt; NUD_REACHABLE<br>      先确认再引用-　NUD_NONE -&gt; NUD_STALE -&gt; NUD_DELAY -&gt; NUD_PROBE -&gt; NUD_REACHABLE<br>      下面还是从接收函数入手，当匹配号协议号是0x0806，会调用ARP模块的接收函数arp_rcv()。<br>arp_rcv()　ARP接收函数<br>        首先是对arp协议头进行检查，比如大小是否足够，头部各数值是否正确等，这里略过代码，直接向下看。每个协议处理都一样，如果被多个协议占有，则拷贝一份。<br>[cpp] view plain copy<br>if ((skb = skb_share_check(skb, GFP_ATOMIC)) == NULL)<br> goto out_of_mem;<br>        NEIGH_CB(skb)实际就是skb-&gt;cb，在skb声明为u8 char[48]，它用作每个协议模块的私有数据区(control buffer)，每个协议模块可以根据自身需求在其中存储私有数据。而arp模块就利用了它存储控制结构neighbour_cb，它声明如下，占8字节。这个控制结构在代理ARP中使用工作队列时会发挥作用，sched_next代表下次被调度的时间，flags是标志。<br>[cpp] view plain copy<br>memset(NEIGH_CB(skb), 0, sizeof(struct neighbour_cb));<br>struct neighbour_cb {<br> unsigned long sched_next;<br> unsigned int flags;<br>};<br>        函数最后调用arp_process，其间插入netfilter(关于netfilter，参见前篇：<a href="http://hi.csdn.net/link.php?url=http://blog.csdn.net%2Fqy532846454)，作为开始处理ARP报文的起点。" target="_blank" rel="noopener">http://hi.csdn.net/link.php?url=http://blog.csdn.net%2Fqy532846454)，作为开始处理ARP报文的起点。</a><br>[cpp] view plain copy<br>return NF_HOOK(NFPROTO_ARP, NF_ARP_IN, skb, dev, NULL, arp_process);  </p>
-<p>arp_process()<br>    这个函数开始对报文进行处理，首先会从skb中取出arp报头部分的信息，如sha, sip, tha, tip等，这部分可查阅代码，这里略过。ARP不会查询环路地址和组播地址，因为它们没有对应的mac地址，因此遇到这两类地址，直接退出。<br>[cpp] view plain copy<br>if (ipv4_is_loopback(tip) || ipv4_is_multicast(tip))<br> goto out;<br>       如果收到的是重复地址检测报文，并且本机占用了检测了地址，则调用arp_send发送响应。对于重复地址检测报文(ARP报文中源IP为全0)，它所带有的邻居表项信息还没通过检测，此时缓存它显然没有意义，也许下一刻就有其它主机声明它非法，因此，重复地址检测报文中的信息不会加入邻居表中。<br>[cpp] view plain copy<br>if (sip == 0) {<br> if (arp-&gt;ar_op == htons(ARPOP_REQUEST) &amp;&amp;<br>  inet_addr_type(net, tip) == RTN_LOCAL &amp;&amp;<br>  !arp_ignore(in_dev, sip, tip))<br>  arp_send(ARPOP_REPLY, ETH_P_ARP, sip, dev, tip, sha, dev-&gt;dev_addr, sha);<br> goto out;<br>}<br>       下面要处理的地址解析报文，并且要解析的地址在路由表中存在<br>[cpp] view plain copy<br>if (arp-&gt;ar_op == htons(ARPOP_REQUEST) &amp;&amp;<br> ip_route_input(skb, tip, sip, 0, dev) == 0)<br>        第一种情况，如果要解析的是本机地址，则调用neigh_event_ns()，并根据查到的邻居表项n发送ARP响应报文。这里neigh_event_ns的功能是在arp_tbl中查找是否已含有对方主机的地址信息，如果没有，则进行创建，然后会调用neigh_update来更新状态。收到对方主机的请求报文，会导致状态迁移到NUD_STALE。<br>[cpp] view plain copy<br>if (addr_type == RTN_LOCAL) {<br> ……<br> if (!dont_send) {<br>  n = neigh_event_ns(&amp;arp_tbl, sha, &amp;sip, dev);<br>  if (n) {<br>   arp_send(ARPOP_REPLY,ETH_P_ARP,sip,dev,tip,sha,dev-&gt;dev_addr,sha);<br>   neigh_release(n);<br>  }<br> }<br> goto out;<br>}   </p>
-<pre><code> #NUD_INCOMPLETE也迁移到NUD_STALE，作何解释？
- 第二种情况，如果要解析的不是本机地址，则要判断是否支持转发，是否支持代理ARP(代理ARP是陆由器的功能，因此能转发是先决条件)，如果满足条件，那么按照代理ARP流程处理。首先无论如何，主机得通了存在这样一个邻居，因此要在在arp_tbl中查找并(如果不存在)创建相应邻居表项；然后，对于代理ARP，这个流程实际上会执行两遍，第一遍走else部分，第二遍走if部分。第一次的else代码段会触发定时器，通过定时器引发报文重新执行arp_process函数，并走if部分。
--第一遍的else部分：调用pneigh_enqueue()将报文skb加入tbl-&gt;proxy_queue队列，同时设置NEIGH_CB(skb)的值，具体可看后见的代理表项处理。
--第二遍的if部分，发送ARP响应报文，行使代理ARP的功能。
-</code></pre><p>[cpp] view plain copy<br>else if (IN_DEV_FORWARD(in_dev)) {<br> if (addr_type == RTN_UNICAST  &amp;&amp;<br>  (arp_fwd_proxy(in_dev, dev, rt) ||<br>  arp_fwd_pvlan(in_dev, dev, rt, sip, tip) ||<br>  pneigh_lookup(&amp;arp_tbl, net, &amp;tip, dev, 0)))<br> {<br>  n = neigh_event_ns(&amp;arp_tbl, sha, &amp;sip, dev);<br>  if (n)<br>   neigh_release(n);  </p>
-<p>  if (NEIGH_CB(skb)-&gt;flags &amp; LOCALLY_ENQUEUED ||<br>   skb-&gt;pkt_type == PACKET_HOST ||<br>   in_dev-&gt;arp_parms-&gt;proxy_delay == 0) {<br>   arp_send(ARPOP_REPLY,ETH_P_ARP,sip,dev,tip,sha,dev-&gt;dev_addr,sha);<br>  } else {<br>   pneigh_enqueue(&amp;arp_tbl, in_dev-&gt;arp_parms, skb);<br>   in_dev_put(in_dev);<br>   return 0;<br>  }<br>  goto out;<br> }<br>}<br>        补充：neigh_event_ns()与neigh_release()配套使用并不代表创建后又被释放，neigh被释放的条件是neigh-&gt;refcnt==0，但neigh创建时的refcnt=1，而neigh_event_ns会使refcnt+1，neigh_release会使-1，此时refcnt的值还是1，只有当下次单独调用neigh_release时才会被释放。<br>      查找是否已存在这样一个邻居表项。如果ARP报文是发往本机的响应报文，那么neigh会更新为NUD_REACHABLE状态；否则，维持原状态不变。#个人认为，这段代码是处理NUD_INCOMPLETE/NUD_PROBE/NUD_DELAY向NUD_REACHABLE迁移的，但如果一台主机A发送一个对本机的ARP响应报文，那么会导致neigh从NUD_NONE直接迁移到NUD_REACHABLE，当然，按照正常流程，一个ARP响应报文肯定是由于本机发送了ARP请求报文，那样neigh已经处于NUD_INCOMPLETE状态了。<br>[cpp] view plain copy<br>n = __neigh_lookup(&amp;arp_tbl, &amp;sip, dev, 0);<br>if (n) {<br> int state = NUD_REACHABLE;<br> int override;<br> override = time_after(jiffies, n-&gt;updated + n-&gt;parms-&gt;locktime);  </p>
-<p> if (arp-&gt;ar_op != htons(ARPOP_REPLY) ||<br>  skb-&gt;pkt_type != PACKET_HOST)<br>  state = NUD_STALE;<br> neigh_update(n, sha, state, override ? NEIGH_UPDATE_F_OVERRIDE : 0);<br> neigh_release(n);<br>}<br>        实际上，arp_process是接收到ARP报文的处理函数，它涉及到的是邻居表项在收到arp请求和响应的情况，下图反映了arp_process中所涉及的状态转移：收到arp请求，NUD_NONE -&gt; NUD_STALE；收到arp响应，NUD_INCOMPLETE/NUD_DELAY/NUD_PROBE -&gt; NUD_REACHABLE。根据之前分析，我认为还存在NUD_NONE -&gt; NUD_REACHABLE和NUD_INCOMPLETE -&gt; NUD_STALE的转移，作何解释？        </p>
-<p>NUD状态<br>       每个邻居表项在生效前都要经历一系列的状态迁移，每个状态都有不同的含义，在前面已经多次提到了NUD状态。要添加一条有效的邻居表项，有效途径有两条：<br>          先引用再确认-　NUD_NONE -&gt; NUD_INCOMPLETE -&gt; NUD_REACHABLE<br>          先确认再引用-　NUD_NONE -&gt; NUD_STALE -&gt; NUD_DELAY -&gt; NUD_PROBE -&gt; NUD_REACHABLE<br>       其中neigh_timer_handler定时器、neigh_periodic_work工作队列会异步的更改NUD状态，neigh_timer_handler用于NUD_INCOMPLETE, NUD_DELAY, NUD_PROBE, NUD_REACHABLE状态；neigh_periodic_work用于NUD_STALE。注意neigh_timer_handler是每个表项一个的，而neigh_periodic_work是唯一的，NUD_STALE状态的表项没必要单独使用定时器，定期检查过期就可以了，这样大大节省了资源。<br>       neigh_update则专门用于更新表项状态，neigh_send_event则是解析表项时的状态更新，能更新表项的函数很多，这里不一一列出。 </p>
-<p>neigh_timer_handler　定时器函数<br>     当neigh处于NUD_INCOMPLETE, NUD_DELAY, NUD_PEOBE, NUD_REACHABLE时会添加定时器，即neigh_timer_handler，它处理各个状态在定时器到期时的情况。<br>     当neigh处于NUD_REACHABLE状态时，根据NUD的状态转移图，它有三种转移可能，分别对应下面三个条件语句。neigh-&gt;confirmed代表最近收到来自对应邻居项的报文时间，neigh-&gt;used代表最近使用该邻居项的时间。<br>         -如果超时，但期间收到对方的报文，不更改状态，并重置超时时间为neigh-&gt;confirmed+reachable_time；<br>         -如果超时，期间未收到对方报文，但主机使用过该项，则迁移至NUD_DELAY状态，并重置超时时间为neigh-&gt;used+delay_probe_time；<br>         -如果超时，且既未收到对方报文，也未使用过该项，则怀疑该项可能不可用了，迁移至NUD_STALE状态，而不是立即删除，neigh_periodic_work()会定时的清除NUD_STALE状态的表项。<br>[cpp] view plain copy<br>if (state &amp; NUD_REACHABLE) {<br> if (time_before_eq(now,<br>   neigh-&gt;confirmed + neigh-&gt;parms-&gt;reachable_time)) {<br>  NEIGH_PRINTK2(“neigh %p is still alive.\n”, neigh);<br>  next = neigh-&gt;confirmed + neigh-&gt;parms-&gt;reachable_time;<br> } else if (time_before_eq(now,<br>   neigh-&gt;used + neigh-&gt;parms-&gt;delay_probe_time)) {<br>  NEIGH_PRINTK2(“neigh %p is delayed.\n”, neigh);<br>  neigh-&gt;nud_state = NUD_DELAY;<br>  neigh-&gt;updated = jiffies;<br>  neigh_suspect(neigh);<br>  next = now + neigh-&gt;parms-&gt;delay_probe_time;<br> } else {<br>  NEIGH_PRINTK2(“neigh %p is suspected.\n”, neigh);<br>  neigh-&gt;nud_state = NUD_STALE;<br>  neigh-&gt;updated = jiffies;<br>  neigh_suspect(neigh);<br>  notify = 1;<br> }<br>}<br>       下图是对上面表项处于NUD_REACHABLE状态时，定时器到期后3种情形的示意图： </p>
-<pre><code>当neigh处于NUD_DELAY状态时，根据NUD的状态转移图，它有二种转移可能，分别对应下面二个条件语句。
-   -如果超时，期间收到对方报文，迁移至NUD_REACHABLE，记录下次检查时间到next；
-   -如果超时，期间未收到对方的报文，迁移至NUD_PROBE，记录下次检查时间到next。
-在NUD_STALE-&gt;NUD_PROBE中间还插入NUD_DELAY状态，是为了减少ARP包的数目，期望在定时时间内会收到对方的确认报文，而不必再进行地址解析。
-</code></pre><p>[cpp] view plain copy<br>else if (state &amp; NUD_DELAY) {<br> if (time_before_eq(now,<br>   neigh-&gt;confirmed + neigh-&gt;parms-&gt;delay_probe_time)) {<br>  NEIGH_PRINTK2(“neigh %p is now reachable.\n”, neigh);<br>  neigh-&gt;nud_state = NUD_REACHABLE;<br>  neigh-&gt;updated = jiffies;<br>  neigh_connect(neigh);<br>  notify = 1;<br>  next = neigh-&gt;confirmed + neigh-&gt;parms-&gt;reachable_time;<br> } else {<br>  NEIGH_PRINTK2(“neigh %p is probed.\n”, neigh);<br>  neigh-&gt;nud_state = NUD_PROBE;<br>  neigh-&gt;updated = jiffies;<br>  atomic_set(&amp;neigh-&gt;probes, 0);<br>  next = now + neigh-&gt;parms-&gt;retrans_time;<br> }<br>}<br>        当neigh处于NUD_PROBE或NUD_INCOMPLETE状态时，记录下次检查时间到next，因为这两种状态需要发送ARP解析报文，它们过程的迁移依赖于ARP解析的进程。<br>[cpp] view plain copy<br>else {<br> /<em> NUD_PROBE|NUD_INCOMPLETE </em>/<br> next = now + neigh-&gt;parms-&gt;retrans_time;<br>}<br>        经过定时器超时后的状态转移，如果neigh处于NUD_PROBE或NUD_INCOMPLETE，则会发送ARP报文，先会检查报文发送的次数，如果超过了限度，表明对方主机没有回应，则neigh进入NUD_FAILED，被释放掉。<br>[cpp] view plain copy<br>if ((neigh-&gt;nud_state &amp; (NUD_INCOMPLETE | NUD_PROBE)) &amp;&amp;<br> atomic_read(&amp;neigh-&gt;probes) &gt;= neigh_max_probes(neigh)) {<br> neigh-&gt;nud_state = NUD_FAILED;<br> notify = 1;<br> neigh_invalidate(neigh);<br>}<br>        检查完后，如果还未超过限度，则会发送ARP报文，neigh-&gt;ops-&gt;solicit在创建表项neigh时被赋值，一般是arp_solicit，并且增加探测计算neigh-&gt;probes。<br>[cpp] view plain copy<br>if (neigh-&gt;nud_state &amp; (NUD_INCOMPLETE | NUD_PROBE)) {<br> struct sk_buff <em>skb = skb_peek(&amp;neigh-&gt;arp_queue);<br> /</em> keep skb alive even if arp_queue overflows */<br> if (skb)<br>  skb = skb_copy(skb, GFP_ATOMIC);<br> write_unlock(&amp;neigh-&gt;lock);<br> neigh-&gt;ops-&gt;solicit(neigh, skb);<br> atomic_inc(&amp;neigh-&gt;probes);<br> kfree_skb(skb);<br>}<br>      实际上，neigh_timer_handler处理启用了定时器状态超时的情况，下图反映了neigh_timer_handler中所涉及的状态转移，值得注意的是NUD_DELAY -&gt; NUD_REACHABLE的状态转移，在arp_process中也提到过，收到arp reply时会有表项状态NUD_DELAY -&gt; NUD_REACHABLE。它们两者的区别在于arp_process处理的是arp的确认报文，而neigh_timer_handler处理的是4层的确认报文。 </p>
-<p>neigh_periodic_work　NUD_STALE状态的定时函数<br>     当neigh处于NUD_STALE状态时，此时它等待一段时间，主机引用到它，从而转入NUD_DELAY状态；没有引用，则转入NUD_FAIL，被释放。不同于NUD_INCOMPLETE、NUD_DELAY、NUD_PROBE、NUD_REACHABLE状态时的定时器，这里使用的异步机制，通过定期触发neigh_periodic_work()来检查NUD_STALE状态。<br>[cpp] view plain copy<br>tbl-&gt;parms.base_reachable_time = 30 HZ<br>     当初始化邻居表时，添加了neigh_periodic_work工作<br>     neigh_table_init() -&gt; neigh_table_init_no_netlink()：<br>[cpp] view plain copy<br>INIT_DELAYED_WORK_DEFERRABLE(&amp;tbl-&gt;gc_work, neigh_periodic_work);<br>        当neigh_periodic_work执行时，首先计算到达时间(reachable_time)，其中要注意的是<br>[cpp] view plain copy<br>p-&gt;reachable_time = neigh_rand_reach_time(p-&gt;base_reachable_time);<br>unsigned long neigh_rand_reach_time(unsigned long base)<br>{<br> return (base ? (net_random() % base) + (base &gt;&gt; 1) : 0);<br>}<br>        因此，reachable_time实际取值是1/2 base ~ 2/3 base，而base = base_reachable_time，当表项处于NUD_REACHABLE状态时，会启动一个定时器，时长为reachable_time，即一个表项在不被使用时存活时间是1/2 base_reachable_time ~ 2/3 base_reachable_time。<br>     然后它会遍历整个邻居表，每个hash_buckets的每个表项，如果在gc_staletime内仍未被引用过，则会从邻居表中清除。<br>[cpp] view plain copy<br>for (i = 0 ; i &lt;= tbl-&gt;hash_mask; i++) {<br> np = &amp;tbl-&gt;hash_buckets[i];<br> while ((n = <em>np) != NULL) {<br>  …..<br>if (atomic_read(&amp;n-&gt;refcnt) == 1 &amp;&amp;<br>  (state == NUD_FAILED ||<br>  time_after(jiffies, n-&gt;used + n-&gt;parms-&gt;gc_staletime))) {  
-  </em>np = n-&gt;next;<br>  n-&gt;dead = 1;<br>  write_unlock(&amp;n-&gt;lock);<br>  neigh_cleanup_and_release(n);<br>  continue;<br> }<br> ……<br>}<br>      在工作最后，再次添加该工作到队列中，并延时1/2 base_reachable_time开始执行，这样，完成了neigh_periodic_work工作每隔1/2 base_reachable_time执行一次。<br>schedule_delayed_work(&amp;tbl-&gt;gc_work, tbl-&gt;parms.base_reachable_time &gt;&gt; 1);<br>      neigh_periodic_work定期执行，但要保证表项不会刚添加就被neigh_periodic_work清理掉，这里的策略是：gc_staletime大于1/2 base_reachable_time。默认的，gc_staletime = 30，base_reachable_time = 30。也就是说，neigh_periodic_work会每15HZ执行一次，但表项在NUD_STALE的存活时间是30HZ，这样，保证了每项在最差情况下也有(30 - 15)HZ的生命周期。<br>neigh_update　邻居表项状态更新<br>      如果新状态是非有效(!NUD_VALID)，那么要做的就是删除该表项：停止定时器neigh_del_timer，设置neigh状态nud_state为新状态new。除此之外，当是NUD_INCOMPLETE或NUD_PROBE状态时，可能有暂时因为地址没有解析而暂存在neigh-&gt;arp_queue中的报文，而现在表项更新到NUD_FAILED，即解析无法成功，那么这么暂存的报文也只能被丢弃neigh_invalidate。<br>[cpp] view plain copy<br>if (!(new &amp; NUD_VALID)) {<br> neigh_del_timer(neigh);<br> if (old &amp; NUD_CONNECTED)<br>  neigh_suspect(neigh);<br> neigh-&gt;nud_state = new;<br> err = 0;<br> notify = old &amp; NUD_VALID;<br> if ((old &amp; (NUD_INCOMPLETE | NUD_PROBE)) &amp;&amp;<br>  (new &amp; NUD_FAILED)) {<br>  neigh_invalidate(neigh);<br>  notify = 1;<br> }<br> goto out;<br>}<br>         中间这段代码是对比表项的地址是否发生了变化，略过。#个人认为NUD_REACHABLE状态时，新状态为NUD_STALE是在下面这段代码里面除去了，因为NUD_REACHABLE状态更好，不应该回退到NUD_STALE状态。但是当是NUD_DELAY, NUD_PROBE, NUD_INCOMPLETE时仍会被更新到NUD_STALE状态，对此很不解???<br>[cpp] view plain copy<br>else {<br> if (lladdr == neigh-&gt;ha &amp;&amp; new == NUD_STALE &amp;&amp;<br>  ((flags &amp; NEIGH_UPDATE_F_WEAK_OVERRIDE) ||<br>  (old &amp; NUD_CONNECTED)))<br>  new = old;<br>}<br>        新旧状态不同时，首先删除定时器，如果新状态需要定时器，则重新设置定时器，最后设置表项neigh为新状态new。<br>[cpp] view plain copy<br>if (new != old) {<br> neigh_del_timer(neigh);<br> if (new &amp; NUD_IN_TIMER)<br>  neigh_add_timer(neigh, (jiffies +<br>   ((new &amp; NUD_REACHABLE) ?<br>   neigh-&gt;parms-&gt;reachable_time :<br>    0)));<br> neigh-&gt;nud_state = new;<br>}<br>        如果邻居表项中的地址发生了更新，有了新的地址值lladdr，那么更新表项地址neigh-&gt;ha，并更新与此表项相关的所有缓存表项neigh_update_hhs。<br>[cpp] view plain copy<br>if (lladdr != neigh-&gt;ha) {<br> memcpy(&amp;neigh-&gt;ha, lladdr, dev-&gt;addr_len);<br> neigh_update_hhs(neigh);<br> if (!(new &amp; NUD_CONNECTED))<br>  neigh-&gt;confirmed = jiffies -<br>   (neigh-&gt;parms-&gt;base_reachable_time &lt;&lt; 1);<br> notify = 1;<br>}<br>        如果表项状态从非有效(!NUD_VALID)迁移到有效(NUD_VALID)，且此表项上的arp_queue上有项，表明之前有报文因为地址无法解析在暂存在了arp_queue上。此时表项地址解析完成，变为有效状态，从arp_queue中取出所有待发送的报文skb，发送出去n1-&gt;output(skb)，并清空表项的arp_queue。<br>[cpp] view plain copy<br>if (!(old &amp; NUD_VALID)) {<br> struct sk_buff <em>skb;<br>while (neigh-&gt;nud_state &amp; NUD_VALID &amp;&amp;<br>     (skb = __skb_dequeue(&amp;neigh-&gt;arp_queue)) != NULL) {<br>  struct neighbour </em>n1 = neigh;<br>  write_unlock_bh(&amp;neigh-&gt;lock);<br>  /<em> On shaper/eql skb-&gt;dst-&gt;neighbour != neigh :( </em>/<br>  if (skb_dst(skb) &amp;&amp; skb_dst(skb)-&gt;neighbour)<br>   n1 = skb_dst(skb)-&gt;neighbour;<br>  n1-&gt;output(skb);<br>  write_lock_bh(&amp;neigh-&gt;lock);<br> }<br> skb_queue_purge(&amp;neigh-&gt;arp_queue);<br>}  </p>
-<p>neigh_event_send<br>    当主机需要解析地址，会调用neigh_resolve_output，主机引用表项明显会涉及到表项的NUD状态迁移，NUD_NONE-&gt;NUD_INCOMPLETE，NUD_STALE-&gt;NUD_DELAY。<br>     neigh_event_send -&gt; __neigh_event_send<br>    只处理nud_state在NUD_NONE, NUD_STALE, NUD_INCOMPLETE状态时的情况：<br>[cpp] view plain copy<br>if (neigh-&gt;nud_state &amp; (NUD_CONNECTED | NUD_DELAY | NUD_PROBE))<br>  goto out_unlock_bh;<br>       不处于NUD_STALE和NUD_INCOMPLETE状态，则只能是NUD_NONE。此时主机要用到该邻居表项(注意是通过neigh_resolve_output进入的)，但还没有，因此要通过ARP进行解析，并且此时没有收到对方发来的任何报文，要进行的ARP是广播形式。<br>    在发送ARP报文时有3个参数- ucast_probes, mcast_probes, app_probes，分别代表单播次数，广播次数，app_probes比较特殊，一般情况下为0，当使用了arpd守护进程时才会设置它的值。如果已经收到过对方的报文，即知道了对方的MAC-IP，ARP解析会使用单播形式，次数由ucast_probes决定；如果未收到过对方报文，此时ARP解析只能使用广播形式，次数由mcasat_probes决定。<br>     当mcast_probes有值时，neigh进入NUD_INCOMPLETE状态，设置定时器，注意此时neigh_probes(表示已经进行探测的次数)初始化为ucast_probes，目的是只进行mcast_probes次广播；当mcast_probes值为0时(表明当前配置不允许解析)，neigh进入NUD_FAILED状态，被清除。<br>[cpp] view plain copy<br>if (!(neigh-&gt;nud_state &amp; (NUD_STALE | NUD_INCOMPLETE))) {<br> if (neigh-&gt;parms-&gt;mcast_probes + neigh-&gt;parms-&gt;app_probes) {<br>  atomic_set(&amp;neigh-&gt;probes, neigh-&gt;parms-&gt;ucast_probes);<br>  neigh-&gt;nud_state     = NUD_INCOMPLETE;<br>  neigh-&gt;updated = jiffies;<br>  neigh_add_timer(neigh, now + 1);<br> } else {<br>  neigh-&gt;nud_state = NUD_FAILED;<br>  neigh-&gt;updated = jiffies;<br>  write_unlock_bh(&amp;neigh-&gt;lock);  </p>
-<p>  kfree_skb(skb);<br>  return 1;<br> }<br>}<br>         当neigh处于NUD_STALE状态时，根据NUD的状态转移图，主机引用到了该邻居表项，neigh转移至NUD_DELAY状态，设置定时器。<br>[cpp] view plain copy<br>else if (neigh-&gt;nud_state &amp; NUD_STALE) {<br> NEIGH_PRINTK2(“neigh %p is delayed.\n”, neigh);<br> neigh-&gt;nud_state = NUD_DELAY;<br> neigh-&gt;updated = jiffies;<br> neigh_add_timer(neigh, jiffies + neigh-&gt;parms-&gt;delay_probe_time);<br>}<br>      当neigh处于NUD_INCOMPLETE状态时，需要发送ARP报文进行地址解析，<strong>skb_queue_tail(&amp;neigh-&gt;arp_queue, skb)的作用就是先把要发送的报文缓存起来，放到neigh-&gt;arp_queue链表中，当完成地址解析，再从neigh-&gt;arp_queue取出报文，并发送出去。<br>[cpp] view plain copy<br>if (neigh-&gt;nud_state == NUD_INCOMPLETE) {<br> if (skb) {<br>  if (skb_queue_len(&amp;neigh-&gt;arp_queue) &gt;= neigh-&gt;parms-&gt;queue_len) {<br>   struct sk_buff *buff;<br>   buff = </strong>skb_dequeue(&amp;neigh-&gt;arp_queue);<br>   kfree_skb(buff);<br>   NEIGH_CACHE_STAT_INC(neigh-&gt;tbl, unres_discards);<br>  }<br>  __skb_queue_tail(&amp;neigh-&gt;arp_queue, skb);<br> }<br> rc = 1;<br>}  </p>
-<p>邻居表的操作<br>neigh_create　创建邻居表项<br>     首先为新的邻居表项struct neighbour分配空间，并做一些初始化。传入的参数tbl就是全局量arp_tbl，分配空间的大小是tbl-&gt;entry_size，而这个值在声明arp_tbl时初始化为sizeof(struct neighbour) + 4，多出的4个字节就是key值存放的地方。<br>[cpp] view plain copy<br>n = neigh_alloc(tbl);<br>       拷贝key(即IP地址)到primary_key，而primary_key就是紧接neighbour的4个字节，看下struct neighbor的声明 - u8 primary_key[0]；设置n-&gt;dev指向接收到报文的网卡设备dev。<br>[cpp] view plain copy<br>memcpy(n-&gt;primary_key, pkey, key_len);<br>n-&gt;dev = dev;<br>       哈希表是牺牲空间换时间，保证均匀度很重要，一旦某个表项的值过多，链表查找会降低性能。因此当表项数目entries大于初始分配大小hash_mask+1时，执行neigh_hash_grow将哈希表空间倍增，这也是内核使用哈希表时常用的方法，可变大小的哈希表。<br>[cpp] view plain copy<br>if (atomic_read(&amp;tbl-&gt;entries) &gt; (tbl-&gt;hash_mask + 1))<br> neigh_hash_grow(tbl, (tbl-&gt;hash_mask + 1) &lt;&lt; 1);<br>       通过pkey和dev计算哈希值，决定插入tbl-&gt;hash_buckets的表项。<br>[cpp] view plain copy<br>hash_val = tbl-&gt;hash(pkey, dev) &amp; tbl-&gt;hash_mask;<br>       搜索tbl-&gt;hash_buckets[hash_val]项，如果创建的新ARP表项已存在，则退出；否则将其n插入该项的链表头。<br>[cpp] view plain copy<br>for (n1 = tbl-&gt;hash_buckets[hash_val]; n1; n1 = n1-&gt;next) {<br> if (dev == n1-&gt;dev &amp;&amp; !memcmp(n1-&gt;primary_key, pkey, key_len)) {<br>  neigh_hold(n1);<br>  rc = n1;<br>  goto out_tbl_unlock;<br> }<br>}<br>n-&gt;next = tbl-&gt;hash_buckets[hash_val];<br>tbl-&gt;hash_buckets[hash_val] = n;<br>        附一张创建ARP表项并插入到hash_buckets的图： </p>
-<p> neigh_lookup 查找ARP表项<br>      查找函数很简单，以IP地址和网卡设备(即pkey和dev)计算哈希值hash_val，然后在tbl-&gt;hash_buckets查找相应项。<br>[cpp] view plain copy<br>hash_val = tbl-&gt;hash(pkey, dev);<br>for (n = tbl-&gt;hash_buckets[hash_val &amp; tbl-&gt;hash_mask]; n; n = n-&gt;next) {<br> if (dev == n-&gt;dev &amp;&amp; !memcmp(n-&gt;primary_key, pkey, key_len)) {<br>  neigh_hold(n);<br>  NEIGH_CACHE_STAT_INC(tbl, hits);<br>  break;<br> }<br>}  </p>
-<p>代理ARP<br>      代理ARP的相关知识查阅google。要明确代理ARP功能是针对陆由器的(或者说是具有转发功能的主机)。开启ARP代理后，会对查询不在本网段的ARP请求包回应。<br>      回到之前的arp_process代码，处理代理ARP的情况，这实际就是进行代理ARP的条件，IN_DEV_FORWARD是支持转发，RTN_UNICAST是与路由直连，arp_fwd_proxy表示设备支持代理行为，arp_fwd_pvlan表示支持代理同设备进出，pneigh_lookup表示目的地址的代理。这两种arp_fwd_proxy和arp_fwd_pvlan都只是网卡设备的一种性质，pneigh_lookup则是一张代理邻居表，它的内容都是手动添加或删除的，三种策略任一一种满足都可以进行代理ARP。<br>[cpp] view plain copy<br>else if (IN_DEV_FORWARD(in_dev)) {<br> if (addr_type == RTN_UNICAST  &amp;&amp;<br>   (arp_fwd_proxy(in_dev, dev, rt) ||<br>    arp_fwd_pvlan(in_dev, dev, rt, sip, tip) ||<br>    pneigh_lookup(&amp;arp_tbl, net, &amp;tip, dev, 0)))  </p>
-<p>pneigh_lookup 查找或添加代理邻居表项[proxy neighbour]<br>      以[pkey=tip, key_len=4]计算hash值，执行<strong>pneigh_lookup_1在phash_buckets中查找。<br>[cpp] view plain copy<br>u32 hash_val = pneigh_hash(pkey, key_len);<br>n = </strong>pneigh_lookup_1(tbl-&gt;phash_buckets[hash_val], net, pkey, key_len, dev);<br>       如果在phash_buckets中查找到，或者不需要创建新表项，则函数返回，此时它的功能仅仅是lookup。<br>[cpp] view plain copy<br>if (n || !creat)<br> goto out;<br>        而当传入参数create=1时，则它的功能不仅是lookup，还会在表项不存在时create。同neighbour结构一样，键值pkey存储在pneigh结构的后面，这样当pkey变化时，修改十分容易。创建操作很直观，为pneigh和pkey分配空间，初始化些变量，最后插入phash_buckets。<br>[cpp] view plain copy<br>n = kmalloc(sizeof(*n) + key_len, GFP_KERNEL);<br>……<br>write_pnet(&amp;n-&gt;net, hold_net(net));<br>memcpy(n-&gt;key, pkey, key_len);<br>……<br>n-&gt;next = tbl-&gt;phash_buckets[hash_val];<br>tbl-&gt;phash_buckets[hash_val] = n;  </p>
-<p>pneigh_enqueue　将报文加入代理队列<br>     首先计算下次调度的时间，这是一个随机值，记录到sched_next中；设置flags|=LOCALLY_ENQUEUED表明报文是本地加入的。<br>[cpp] view plain copy<br>unsigned long sched_next = now + (net_random() % p-&gt;proxy_delay);<br>……<br>NEIGH_CB(skb)-&gt;sched_next = sched_next;<br>NEIGH_CB(skb)-&gt;flags |= LOCALLY_ENQUEUED;<br>        然后将报文加入proxy_queue，并设置定时器proxy_timer，下次超时时间为刚计算的值sched_next，这样，下次超时时就会处理proxy_queue队列中的报文。<br>[cpp] view plain copy<br>__skb_queue_tail(&amp;tbl-&gt;proxy_queue, skb);<br>mod_timer(&amp;tbl-&gt;proxy_timer, sched_next);<br>        这里的tbl当然是arp_tbl，它的proxy_timer是在初始化时设置的arp_init() -&gt; neigh_table_init_no_netlink()中：<br>[cpp] view plain copy<br>setup_timer(&amp;tbl-&gt;proxy_timer, neigh_proxy_process, (unsigned long)tbl);  </p>
-<p> neigh_proxy_process　代理ARP的定时器<br>     skb_queue_walk_safe如同for循环一样，它遍历proxy_queue，一个个取出其中的报文skb，查看报文的调度时间sched_next与当前时间now的差值。<br>      如果tdif&lt;=0则表明调度时间已到或已过，报文要被处理了，从proxy_queue上取出该报文，调用tbl-&gt;proxy_redo重新发送报文，tbl-&gt;proxy_redo也是在arp初始化时赋值的，实际上就是arp_process()函数。结合上面的分析，它会执行arp_process中代理ARP处理的else部分，发送响应报文。<br>      如果tdif&gt;0则表明调度时间还未到，else if部分的功能就是记录下最近要过期的调度时间到sched_next。<br>[cpp] view plain copy<br>skb_queue_walk_safe(&amp;tbl-&gt;proxy_queue, skb, n) {<br> long tdif = NEIGH_CB(skb)-&gt;sched_next - now;  </p>
-<p> if (tdif &lt;= 0) {<br>  struct net_device *dev = skb-&gt;dev;<br>  __skb_unlink(skb, &amp;tbl-&gt;proxy_queue);<br>  if (tbl-&gt;proxy_redo &amp;&amp; netif_running(dev))<br>   tbl-&gt;proxy_redo(skb);<br>  else<br>   kfree_skb(skb);  </p>
-<p>  dev_put(dev);<br> } else if (!sched_next || tdif &lt; sched_next)<br>  sched_next = tdif;<br>}<br>        重新设置proxy_timer的定时器，下次超时时间为刚刚记录下的最近要调度的时间sched_next + 当前时间jiffies。<br>[cpp] view plain copy<br>del_timer(&amp;tbl-&gt;proxy_timer);<br>if (sched_next)<br> mod_timer(&amp;tbl-&gt;proxy_timer, jiffies + sched_next);<br>        以一张简单的图来说明ARP代理的处理过程，过程一是入队列等待，过程二是出队列发送。不立即处理ARP代理请求报文的原因是为了性能，收到报文后会启动定时器，超时时间是一个随机变量，保证了在大量主机同时进行此类请求时不会形成太大的负担。 </p>
-<p>邻居表缓存<br>      邻居表缓存中存储的就是二层报头，如果缓存的报头正好被用到，那么直接从邻居表缓存中取出报文就行了，而不用再额外的构造报头，加快了协议栈的响应速度。<br>neigh_hh_init 创建新的邻居表缓存<br>     当发送报文时，如果还没有对方主机MAC地址，则调用neigh_resove_output进行地址解析，此时会判断dst-&gt;hh为NULL时，就会调用neigh_hh_init创建邻居表缓存，加速下次的报文发送。<br>     首先在邻居表项所链的所有邻居表缓存项n-&gt;hh匹配协议号protocol，找到，则说明已有缓存，不必再创建，neigh_hh_init会直接返回；未找到，则会创建新的缓存项hh。<br>[cpp] view plain copy<br>for (hh = n-&gt;hh; hh; hh = hh-&gt;hh_next)<br> if (hh-&gt;hh_type == protocol)<br>  break;<br>        下面代码段创建了新的缓存项hh，并初始化了hh的内容，其中dev-&gt;header_ops-&gt;cache会赋值hh-&gt;hh_data，即[SRCMAC, DSTMAC, TYPE]。如果赋值失败，释放掉刚才分配的hh；如果赋值成功，将hh链入n-&gt;hh的链表，并根据NUD状态赋值hh-&gt;hh_output。<br>[cpp] view plain copy<br>if (!hh &amp;&amp; (hh = kzalloc(sizeof(*hh), GFP_ATOMIC)) != NULL) {<br> seqlock_init(&amp;hh-&gt;hh_lock);<br> hh-&gt;hh_type = protocol;<br> atomic_set(&amp;hh-&gt;hh_refcnt, 0);<br> hh-&gt;hh_next = NULL;  </p>
-<p> if (dev-&gt;header_ops-&gt;cache(n, hh)) {<br>  kfree(hh);<br>  hh = NULL;<br> } else {<br>  atomic_inc(&amp;hh-&gt;hh_refcnt);<br>  hh-&gt;hh_next = n-&gt;hh;<br>  n-&gt;hh     = hh;<br>  if (n-&gt;nud_state &amp; NUD_CONNECTED)<br>   hh-&gt;hh_output = n-&gt;ops-&gt;hh_output;<br>  else<br>   hh-&gt;hh_output = n-&gt;ops-&gt;output;<br> }<br>}<br>      最后，创建成功的hh，陆由缓存dst-&gt;hh指向新创建的hh。<br>[cpp] view plain copy<br>if (hh) {<br> atomic_inc(&amp;hh-&gt;hh_refcnt);<br> dst-&gt;hh = hh;<br>}<br>        从hh的创建过程可以看出，通过邻居表项neighbour的缓存hh可以遍历所有的与neighbour相关的缓存(即目的MAC相同，但协议不同)；通过dst的缓存hh只能指向相关的一个缓存(尽管dst-&gt;hh-&gt;hh_next也许有值，但只会使用dst-&gt;hh)。<br>这里解释了为什么neighbour和dst都有hh指针指向缓存项，可以这么说，neighbour指向的hh是全部的，dst指向的hh是特定一个。两者的作用：在发送报文时查找完陆由表找到dst后，会直接用dst-&gt;hh，得到以太网头；而当远程主机MAC地址变更时，通过dst-&gt;neighbour-&gt;hh可以遍历所有缓存项，从而全部更改，而用dst-&gt;hh得一个个查找，几乎是无法完成的。可以这么说，dst-&gt;hh是使用时用的，neigh-&gt;hh是管理时用的。 </p>
-<p>neigh_update_hhs　更新缓存项<br>     更新缓存项更新的实际就是缓存项的MAC地址。比如当收到一个报文，以它源IP为键值在邻居表中查找到的neighbour表项的n-&gt;ha与报文源MAC值不同时，说明对方主机的MAC地址发生了变更，此时就需要更新所有以旧MAC生成的hh为新MAC。<br>邻居表项是以IP为键值查找的，因此通过IP可以查找相关的邻居表项neigh，前面说过neigh-&gt;hh可以遍历所有以之相关的缓存项，所以遍历它，并调用update函数。以以太网卡为例，update = neigh-&gt;dev-&gt;header_ops-&gt;cache_update ==&gt; eth_header_cache_update，而eth_header_cache_update函数就是用新的MAC地址覆盖hh-&gt;data中的旧MAC地址。<br>      neigh_update_hhs函数也说明了neighbour-&gt;hh指针的作用。<br>[cpp] view plain copy<br>for (hh = neigh-&gt;hh; hh; hh = hh-&gt;hh_next) {<br> write_seqlock_bh(&amp;hh-&gt;hh_lock);<br> update(hh, neigh-&gt;dev, neigh-&gt;ha);<br> write_sequnlock_bh(&amp;hh-&gt;hh_lock);<br>}<br>      补充：缓存项hh的生命期从创建时起，会一直持续到邻居表项被删除，也就是调用neigh_destroy时，删除neigh-&gt;hh指向的所有缓存项。<br>参考：《Understanding Linux Network Internals》</p>
+        <h2 id="为什么要有锁机制？"><a href="#为什么要有锁机制？" class="headerlink" title="为什么要有锁机制？"></a>为什么要有锁机制？</h2><p>共享资源被并发使用的时候，当有可能破坏资源的一致性的时候，就需要一种同步机制，保证资源可以被使用正确。</p>
+<h2 id="通俗地理解锁机制"><a href="#通俗地理解锁机制" class="headerlink" title="通俗地理解锁机制"></a>通俗地理解锁机制</h2><p><strong>厕所浴室</strong>：一种共享资源<br><strong>爸爸、妈妈、小孩</strong>：用户</p>
+<blockquote>
+<p>当有一个人进入厕所后，该资源已经被占用，就会将门锁住。另一个人只能排队等待，直到资源被释放（开门离开），下一个人才能使用。</p>
+</blockquote>
+<h2 id="锁机制概览"><a href="#锁机制概览" class="headerlink" title="锁机制概览"></a>锁机制概览</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>定义</th>
+<th>特点</th>
+<th>应用场景</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原子操作（atomic）</td>
+<td>所谓原子操作，就是<strong>该操作绝不会在执行完毕前被任何其他任务或事件打断</strong>，也就说，它的<strong>最小的执行单位</strong>，不可能有比它更小的执行单位，因此这里的原子实际是使用了物理学里的物质微粒的概念。</td>
+<td>需要硬件的支持。都使用汇编语言实现</td>
+<td>原子操作主要用于实现资源计数，很多引用计数(refcnt)就是通过原子操作实现的</td>
+</tr>
+<tr>
+<td>互斥锁（mutex）</td>
+<td>每个对象都对应于一个可称为” 互斥锁” 的标记，这个标记用来保证<strong>在任一时刻，只能有一个线程访问该对象</strong>。</td>
+<td>同一时间只能有一个任务持有互斥锁，而且只有这个任务可以对互斥锁进行解锁。<strong>互斥锁不能用于中断上下文</strong>。互斥锁比当前的内核信号量选项更快，并且更加紧凑。会引起调用者睡眠。</td>
+</tr>
+<tr>
+<td>自旋锁（Spanlock）</td>
+<td>自旋锁与互斥锁有点类似，只是自旋锁<strong>不会引起调用者睡眠</strong>。</td>
+<td>如果自旋锁已经被别的执行单元保持，调用者就一直循环在那里看是否该自旋锁的保持者已经释放了锁，”自旋”一词就是因此而得名。由于<strong>自旋锁使用者一般保持锁时间非常短</strong>，因此选择自旋而不是睡眠是非常必要的，<strong>自旋锁的效率远高于互斥锁</strong></td>
+<td>调用资源的时间短。可以在任何上下文使用</td>
+</tr>
+<tr>
+<td>顺序锁（seqlock）</td>
+<td>用于能够区分读与写的场合，并且是读操作很多、写操作很少，写操作的优先权大于读操作。</td>
+</tr>
+<tr>
+<td>RCU(read-copy-update)</td>
+<td>RCU也是用于能够区分读与写的场合，并且也是读多写少，但是读操作的优先权大于写操作（与seqlock相反）</td>
+</tr>
+<tr>
+<td>信号量</td>
+<td>Linux内核的信号量在概念和原理上与用户态的SystemV的IPC机制信号量是一样的，但是它绝不可能在内核之外使用，因此它与SystemV的IPC机制信号量毫不相干</td>
+<td>信号量和读写信号量<strong>适合于保持时间较长的情况，它们会导致调用者睡眠</strong>，因此<strong>只能在进程上下文使用</strong>（_trylock的变种能够在中断上下文使用）</td>
+<td></td>
+<td>信号量可以类比为一把锁（共享资源）对应多把钥匙（信号量），只有持有钥匙的人才能开锁</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -467,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/net_network_arp.html" rel="next" title="【网络编程】【RIB表与FIB表、ARP表与FDB表】">
-                <i class="fa fa-chevron-left"></i> 【网络编程】【RIB表与FIB表、ARP表与FDB表】
+              <a href="/net_network_arp.html" rel="next" title="【网络】【RIB表与FIB表、ARP表与FDB表】">
+                <i class="fa fa-chevron-left"></i> 【网络】【RIB表与FIB表、ARP表与FDB表】
               </a>
             
           </div>
@@ -477,8 +505,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/book_jinzitayuanli.html" rel="prev" title="【金字塔原理】">
-                【金字塔原理】 <i class="fa fa-chevron-right"></i>
+              <a href="/net_network_neigh.html" rel="prev" title="【网络编程】【邻居表】">
+                【网络编程】【邻居表】 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -509,6 +537,16 @@
           
 
   
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
 
 
 
@@ -530,8 +568,17 @@
 
       
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -546,7 +593,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -557,7 +604,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -568,7 +615,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -591,6 +638,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要有锁机制？"><span class="nav-number">1.</span> <span class="nav-text">为什么要有锁机制？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通俗地理解锁机制"><span class="nav-number">2.</span> <span class="nav-text">通俗地理解锁机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锁机制概览"><span class="nav-number">3.</span> <span class="nav-text">锁机制概览</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -623,10 +686,18 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.5</div>
 
 
 
+
+
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
 
         
 
@@ -714,30 +785,50 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.5"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.5"></script>
 
 
 
   
+  
 
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.5"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.5"></script>
 
 
 
   
 
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.5"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/net_network_neigh.html';
+          this.page.identifier = 'net_network_neigh.html';
+          this.page.title = '【网络编程】【邻居表】';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
 
   
 
@@ -746,11 +837,6 @@
 
 	
 
-
-
-
-
-  
 
 
 

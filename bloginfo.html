@@ -50,19 +50,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.5" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.5">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.5">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.5">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.5" color="#222">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。 Hexo 使用七牛图床如何用七牛和picGO设置免费图床其中存储区域可以根据七牛官网查到，我的存储空间时华北的，所以设置为z1。 Hexo 站内链接 首先参考参照站内的 “文章链接变更为永久链接”, 为每篇文章添加urlnameeg：我的《【网络编程】【RIB表与FIB表、ARP表与FDB表】》 文章对应的urlname是net_netwo">
+<meta name="description" content="收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。 [2019年6月30日] Hexo 添加图表Mermaid特性Hexo中插入mermaid diagrams  安装插件：npm install hexo-filter-mermaid-diagrams 配置hexo下面的_config.xml, 下面的配置增加到最后 123456# mermaid chartmermaid: ## mer">
 <meta name="keywords" content="Hexo博客,技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客小知识">
 <meta property="og:url" content="http://yoursite.com/bloginfo.html">
 <meta property="og:site_name" content="loop">
-<meta property="og:description" content="收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。 Hexo 使用七牛图床如何用七牛和picGO设置免费图床其中存储区域可以根据七牛官网查到，我的存储空间时华北的，所以设置为z1。 Hexo 站内链接 首先参考参照站内的 “文章链接变更为永久链接”, 为每篇文章添加urlnameeg：我的《【网络编程】【RIB表与FIB表、ARP表与FDB表】》 文章对应的urlname是net_netwo">
+<meta property="og:description" content="收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。 [2019年6月30日] Hexo 添加图表Mermaid特性Hexo中插入mermaid diagrams  安装插件：npm install hexo-filter-mermaid-diagrams 配置hexo下面的_config.xml, 下面的配置增加到最后 123456# mermaid chartmermaid: ## mer">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-25T15:24:56.510Z">
+<meta property="og:updated_time" content="2019-06-30T03:46:20.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客小知识">
-<meta name="twitter:description" content="收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。 Hexo 使用七牛图床如何用七牛和picGO设置免费图床其中存储区域可以根据七牛官网查到，我的存储空间时华北的，所以设置为z1。 Hexo 站内链接 首先参考参照站内的 “文章链接变更为永久链接”, 为每篇文章添加urlnameeg：我的《【网络编程】【RIB表与FIB表、ARP表与FDB表】》 文章对应的urlname是net_netwo">
+<meta name="twitter:description" content="收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。 [2019年6月30日] Hexo 添加图表Mermaid特性Hexo中插入mermaid diagrams  安装插件：npm install hexo-filter-mermaid-diagrams 配置hexo下面的_config.xml, 下面的配置增加到最后 123456# mermaid chartmermaid: ## mer">
 
 
 
@@ -99,7 +99,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '5.1.4',
+    version: '5.1.5',
     sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -381,6 +381,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/bloginfo.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="bloginfo.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -406,6 +416,20 @@
 
       
         <p>收集记录自己使用到的优化个人博客的知识和技巧，水滴石穿。</p>
+<h2 id="2019年6月30日-Hexo-添加图表Mermaid特性"><a href="#2019年6月30日-Hexo-添加图表Mermaid特性" class="headerlink" title="[2019年6月30日] Hexo 添加图表Mermaid特性"></a>[2019年6月30日] Hexo 添加图表Mermaid特性</h2><p><a href="https://wangxiaoyu-go.github.io/2018/11/23/hexo-filter-mermaid-diagrams/" target="_blank" rel="noopener">Hexo中插入mermaid diagrams</a></p>
+<ol>
+<li>安装插件：npm install hexo-filter-mermaid-diagrams</li>
+<li><p>配置hexo下面的_config.xml, 下面的配置增加到最后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># mermaid chart</span><br><span class="line">mermaid: ## mermaid url https://github.com/knsv/mermaid</span><br><span class="line">  enable: true  # default true</span><br><span class="line">  version: &quot;7.1.2&quot; # default v7.1.2</span><br><span class="line">  options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js</span><br><span class="line">    #startOnload: true  // default true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>js文件修改 </p>
+</li>
+</ol>
+<ul>
+<li>修改位置 （next主题为例）<br>themes/next/layout/_partials/footer.swig</li>
+<li>footer.swig 最后添加下面的内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.mermaid.enable %&#125;</span><br><span class="line">  &lt;script src=&apos;https://unpkg.com/mermaid@&#123;&#123; theme.mermaid.version &#125;&#125;/dist/mermaid.min.js&apos;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    if (window.mermaid) &#123;</span><br><span class="line">      mermaid.initialize(&#123;&#123; JSON.stringify(theme.mermaid.options) &#125;&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h2 id="Hexo-使用七牛图床"><a href="#Hexo-使用七牛图床" class="headerlink" title="Hexo 使用七牛图床"></a>Hexo 使用七牛图床</h2><p><a href="https://www.jianshu.com/p/0997d0d15e55" target="_blank" rel="noopener">如何用七牛和picGO设置免费图床</a><br>其中存储区域可以根据七牛官网查到，我的存储空间时华北的，所以设置为z1。</p>
 <h2 id="Hexo-站内链接"><a href="#Hexo-站内链接" class="headerlink" title="Hexo 站内链接"></a>Hexo 站内链接</h2><ol>
 <li>首先参考参照站内的 “文章链接变更为永久链接”, 为每篇文章添加urlname<br>eg：我的《【网络编程】【RIB表与FIB表、ARP表与FDB表】》 文章对应的urlname是net_network_arp</li>
@@ -488,6 +512,16 @@
           
 
   
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
 
 
 
@@ -534,7 +568,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -545,7 +579,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -556,7 +590,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -589,7 +623,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-使用七牛图床"><span class="nav-number">1.</span> <span class="nav-text">Hexo 使用七牛图床</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-站内链接"><span class="nav-number">2.</span> <span class="nav-text">Hexo 站内链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客文章置顶功能"><span class="nav-number">3.</span> <span class="nav-text">Hexo博客文章置顶功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo添加站内搜索"><span class="nav-number">4.</span> <span class="nav-text">Hexo添加站内搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义Hexo博客的文章模板"><span class="nav-number">5.</span> <span class="nav-text">自定义Hexo博客的文章模板</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019年6月30日-Hexo-添加图表Mermaid特性"><span class="nav-number">1.</span> <span class="nav-text">[2019年6月30日] Hexo 添加图表Mermaid特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-使用七牛图床"><span class="nav-number">2.</span> <span class="nav-text">Hexo 使用七牛图床</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-站内链接"><span class="nav-number">3.</span> <span class="nav-text">Hexo 站内链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客文章置顶功能"><span class="nav-number">4.</span> <span class="nav-text">Hexo博客文章置顶功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo添加站内搜索"><span class="nav-number">5.</span> <span class="nav-text">Hexo添加站内搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义Hexo博客的文章模板"><span class="nav-number">6.</span> <span class="nav-text">自定义Hexo博客的文章模板</span></a></li></ol></div>
             
 
           </div>
@@ -627,10 +661,18 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.5</div>
 
 
 
+
+
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
 
         
 
@@ -718,30 +760,50 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.5"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.5"></script>
 
 
 
   
+  
 
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.5"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.5"></script>
 
 
 
   
 
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.5"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/bloginfo.html';
+          this.page.identifier = 'bloginfo.html';
+          this.page.title = 'Hexo博客小知识';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
 
   
 
@@ -750,11 +812,6 @@
 
 	
 
-
-
-
-
-  
 
 
 

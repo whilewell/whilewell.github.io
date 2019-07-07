@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #22ff05;
+  background: #40d146;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2917,4 +2917,7 @@ img.img-topic {
   padding: 0;
   float: right;
   clear: right;
+}
+.mermaid {
+  background: transparent;
 }

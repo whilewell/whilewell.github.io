@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.5" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.5">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.5">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.5">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.5" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="团队管理, 团队知识系统，指导,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="文章导读前段时间在梳理如何管理团队知识系统，自己在头条上面偶尔看到了一篇比较好的文章，此处进行镜像备份。如果有侵权，联系我第一时间删除。  文章目标 为什么要进行团队知识系统 团队知识系统管理要怎么搭建    原文了解团队知识管理体系1.知识管理是什么？知识管理目前仍没有一个标准的定义，众多定义中比较全面的一个是：在组织中建构一个量化与质化的知识系统，让组织中的资讯与知识，透过获得、创造、分享、整">
+<meta name="keywords" content="团队管理, 团队知识系统，指导">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【团队管理】【团队知识系统指导】">
+<meta property="og:url" content="http://yoursite.com/TM_KnowledgeSystem_guide.html">
+<meta property="og:site_name" content="loop">
+<meta property="og:description" content="文章导读前段时间在梳理如何管理团队知识系统，自己在头条上面偶尔看到了一篇比较好的文章，此处进行镜像备份。如果有侵权，联系我第一时间删除。  文章目标 为什么要进行团队知识系统 团队知识系统管理要怎么搭建    原文了解团队知识管理体系1.知识管理是什么？知识管理目前仍没有一个标准的定义，众多定义中比较全面的一个是：在组织中建构一个量化与质化的知识系统，让组织中的资讯与知识，透过获得、创造、分享、整">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-07T03:32:52.712Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【团队管理】【团队知识系统指导】">
+<meta name="twitter:description" content="文章导读前段时间在梳理如何管理团队知识系统，自己在头条上面偶尔看到了一篇比较好的文章，此处进行镜像备份。如果有侵权，联系我第一时间删除。  文章目标 为什么要进行团队知识系统 团队知识系统管理要怎么搭建    原文了解团队知识管理体系1.知识管理是什么？知识管理目前仍没有一个标准的定义，众多定义中比较全面的一个是：在组织中建构一个量化与质化的知识系统，让组织中的资讯与知识，透过获得、创造、分享、整">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.5',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/TM_KnowledgeSystem_guide.html">
+
+
+
+
+
+  <title>【团队管理】【团队知识系统指导】 | loop</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">loop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生命不息，学习不止</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/TM_KnowledgeSystem_guide.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="whilewell">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="loop">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【团队管理】【团队知识系统指导】</h1>
+        
+
+        <div class="post-meta">
+              
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-07T11:00:01+08:00">
+                2019-07-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/团队管理/" itemprop="url" rel="index">
+                    <span itemprop="name">团队管理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/TM_KnowledgeSystem_guide.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="TM_KnowledgeSystem_guide.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="文章导读"><a href="#文章导读" class="headerlink" title="文章导读"></a>文章导读</h2><p>前段时间在梳理如何管理团队知识系统，自己在头条上面偶尔看到了一篇比较好的文章，此处进行镜像备份。如果有侵权，联系我第一时间删除。</p>
+<ul>
+<li>文章目标<ol>
+<li>为什么要进行团队知识系统</li>
+<li>团队知识系统管理要怎么搭建</li>
+</ol>
+</li>
+</ul>
+<h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><h3 id="了解团队知识管理体系"><a href="#了解团队知识管理体系" class="headerlink" title="了解团队知识管理体系"></a>了解团队知识管理体系</h3><p>1.知识管理是什么？<br>知识管理目前仍没有一个标准的定义，众多定义中比较全面的一个是：<br>在组织中建构一个量化与质化的知识系统，让组织中的资讯与知识，透过获得、创造、分享、整合、记录、存取、更新、创新等过程，不断的回馈到知识系统内，形成永不间断的累积个人与组织的知识成为组织智慧的循环，在企业组织中成为管理与应用的智慧资本，有助于企业做出正确的决策，以应对市场的变化。</p>
+<p>2.为什么要搭建团队知识管理体系？</p>
+<p>知识作为最有价值的资产需要妥善管理，以便它保证能够在最需要的时间将最需要的知识传送给最需要的人，这样可以帮助人们共享信息, 并进而将其通过不同的方式付诸实践, 终极目标是协助企业实现价值最大化。</p>
+<h3 id="如何搭建团队知识管理体系"><a href="#如何搭建团队知识管理体系" class="headerlink" title="如何搭建团队知识管理体系"></a>如何搭建团队知识管理体系</h3><p>第1步：普及</p>
+<p>创建团队知识库是一个很简单的动作，只要在某个平台上创建一个团队，我们甚至就可以说创建完成了。然而搭建不同，搭建是一个持续一段时间的行为。搭建包括前期的准备、规划，后期的管理、完善等等，直至形成一个完整的可持续的体系。</p>
+<p>如何让团队知识管理体系长久地运营下去才是难题，而能否解决这个难题的关键，正是团队是否认可这种方式。只有大家认可了，才会主动来做这件事情。前期需要对团队进行知识管理意识的普及，如跟大家分享其他企业利用这样的管理方式的例子，如让大家先尝试个人知识管理等。目次在于让大家认识到知识管理的有效性，继而愿意来尝试这种方法。</p>
+<p>第2步：规划</p>
+<p>规划是非常关键的一步，切勿提出要搭建团队知识管理体系后，只是简单地要求成员来上传自己的文档，后续就不再予以关注。</p>
+<p>如果要建立一个团队知识管理体系，一定要指定专人负责规划，职责到人才能够把事情做到位。至于如何制定具体的规则，可以结合难点，进行一场头脑风暴。不仅能够充分发挥团体的智慧，还能够了解每一个人的想法。</p>
+<p>在整个规划中，搭建知识架构这件事非常重要。后期在要求成员扩充内容时，可能成员本人并不知道该写什么，就会以架构作为参考来选题。所以架构本身就带有指导的性质，切不可敷衍。</p>
+<p>规划中的两个难点：</p>
+<p>难点1：怎样把隐性知识显性化？</p>
+<p>这里涉及到了关于知识的两个名词。隐性知识指的是未被表述的知识，如技能、秘诀等；显性知识则是以书面文字、图表和数学公式加以表述的知识，更加直观。一般来讲，隐性知识比显性知识更完善、更能创造价值，隐性知识的挖掘和利用能力，将成为个人和组织成功的关键。显性知识则必须能很快地再转换为隐性知识，否则它的真实价值就不复存在。因为显性知识转换为企业员工隐性知识的过程，一般都是知识应用的过程或知识成为生产力的过程。</p>
+<p>怎样把隐性知识显性化，通俗地来说就是怎样把优秀人才的工作经验转化大家看得懂的文字或流程等。一个可考虑的方式，是在每一个项目或较复杂工作做成果总结的时候，规定项目负责人对整个过程进行一次复盘。即除了提交成果以外，还要对整个项目从头到尾进行一次梳理，归纳出优点和不足。这样其他成员也能够间接从中吸取到经验教训。</p>
+<p>难点2：如何快速找到对自己有用的信息？</p>
+<p>完善的分类模式+脑图+准确标题=快速查找</p>
+<p>团队知识库会随时间而扩大，当目录层级非常多的时候，如何找到所需的信息成了一大难题。如果不在归纳梳理上花功夫，知识库里的内容就容易成为一个“杂书间”，完全没有条理，来找“书”的人也根本无法找到对自己有用的“书”。实际上，解决这个问题所要的事也很像一个图书管理员的日常。</p>
+<p>首先要建立一个合理的分类架构，这件事情要由对团队工作所有相关领域都极熟悉的元老级人物来做。因为他们知道什么是合理构架，知道团队需要什么样的内容，知道什么样的内容具有复用性，会从更严谨的角度出发来搭建架构。新人不够熟悉业务领域，所以无法搭建起一个实用合理的知识架构。</p>
+<p>然后要在已经创建了分类架构的基础上，制作一张全局预览图。比较建议的方式是做一张可以实时更新的云端协作思维导图，随着知识库内容的增加而更新。团队成员想查找信息的时候，只要打开脑图就能够找到大概的位置。因为文件夹目录只能看到当下的一层，而要精准地找到某个文件，则需要看到完整的结构。</p>
+<p>除此之外，在最初制定管理规则的时候，对文档标题进行比较严格的规定，要求标题中包括比较详细的关键字，也有助于查找。</p>
+<p>第3步：管理与完善</p>
+<p>规划中制定的规则在实施中还会发现各种不完善的地方，需要在后期的实施中持续优化。甚至可以做A/B 测试来观察不同的规则所带来的效果。规则方面，非常重要的一点是适度，不能让成员感到要求过分。这种用规则来进行约束的方法，可以称之为“硬管理”手段。</p>
+<p>与“硬管理”相对的还有“软管理”，指的是为达成目的所使用的非强制手段。在“软管理”中，管理者的作用十分关键。一方面能够起到表率作用：管理者自己分享一些经验、行业观察等，带起分享知识的风气。另一方面，管理者可以鼓励有潜力的成员，让员工感到被认可，从而主动分享自己的知识。还可以表扬对知识库贡献比较大的成员，增加他们的成就感，同时也让其他的成员愿意花心思来做这件事。</p>
+<p>实际上，最重要的是创造一个乐于分享的和谐氛围，让大家自发性地来分享知识，而不是因为被push才不得不写。</p>
+<p>此外，还要明白每个团队都有自己的特点，产品团队、研发团队、运营团队等等，在很多方面都有自己的特性。当前企业文化、员工素质、运营模式也是需要考虑的方面。应以专人管理辅以员工自发，并随其发展而逐步调整两者比例。</p>
+<p>管理难点：怎样让团队成员持续分享自己的知识？</p>
+<p>经济奖励+精神奖励=持续分享</p>
+<p>分享知识这件事本身就是有门槛的一件事，要求持续分享则是更高的目标。对于成员而言，团队知识管理体系常见的驱动力有两种：经济价值和个人价值。</p>
+<p>要求成员主动而持续地分享，最有效的还属经济驱动。常见形式是有直接的奖金鼓励，以及间接的积分或悬赏等鼓励方式。个人价值方面，则可以提供成员更多成就感，以及更优的工作机会。这两者激励机制都是反馈周期越短，效果越明显。</p>
+<p>Tips：先试错，再实行</p>
+<p>实际上搭建一个完整的团队知识分享体系是一个比较复杂的过程，需要投入许多成本和精力，所以可以先小范围进行尝试，采用产品中MVP（最小化可行产品）的理念来进行试错，等到状态比较理想的时候再在团队全体成员中实行。<br>挑选团队知识管理平台<br>想要搭建起一个完整的团队知识管理体系，必然要借助团队知识管理平台，用以管理存放团队知识文档。好的平台能让搭建团队知识体系这件事变得更简单，从而达到事半功倍的效果。</p>
+<p>1.对团队知识管理平台的要求</p>
+<p>一个好的团队知识平台至少要做到以下几个方面：</p>
+<p>（1）稳定，知识安全不丢失。</p>
+<p>文档的安全是首要考虑因素，所以平台最好由大厂提供。</p>
+<p>（2）存储空间大，且内容不泄密。</p>
+<p>团队知识、资料包括许多机密，平台一定要谨慎选择，非常小的第三方平台可能没有那么有保障。</p>
+<p>（3）个人文档和团队文档加以区分。</p>
+<p>方便成员使用，因为成员也有自己的知识库，需要加以区分。</p>
+<p>（4）多级目录，多种成员权限，多种文档权限。</p>
+<p>多种目录是为了分类与层级管理。多种权限则是leader的管理需要。</p>
+<p>（5）利于查看使用，分享便捷。</p>
+<p>使用方便和分享快速很重要。就使用而言，需要符合多终端的特点，这样才能满足不同的应用场景。分享则包括成员间的分享，以及向外部人员的分享，轻量操作为佳。</p>
+<p>（6）最好还提供多人共同编辑，而且编辑完能够直接保存到平台。</p>
+<p>多人编辑能够让工作流程更简单，不需要传输下载。直接保存到平台也是非常重要的功能。</p>
+<p>很多工具都把“编辑”与“保存”分离开了，编辑依托于别的工具，到保存的时候在纳入管理保存工具之下。流程的衔接性不友好，要在多个系统中切换。复杂的操作流程会提高分享门槛。</p>
+<p>（7）带一些沟通功能，如评论等。</p>
+<p>能够对文档进行评论可免去需要来回切换至IM工具的繁琐过程。评论最好是划词评论，能够更清晰地了解评论针对的是哪部分内容。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/团队管理-团队知识系统，指导/" rel="tag"># 团队管理, 团队知识系统，指导</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/TM_KnowledgeSystem.html" rel="next" title="【团队管理】【团队知识系统】">
+                <i class="fa fa-chevron-left"></i> 【团队管理】【团队知识系统】
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">whilewell</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章导读"><span class="nav-number">1.</span> <span class="nav-text">文章导读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原文"><span class="nav-number">2.</span> <span class="nav-text">原文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#了解团队知识管理体系"><span class="nav-number">2.1.</span> <span class="nav-text">了解团队知识管理体系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何搭建团队知识管理体系"><span class="nav-number">2.2.</span> <span class="nav-text">如何搭建团队知识管理体系</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019-5 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">whilewell</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.5</div>
+
+
+
+
+
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.5"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.5"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.5"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.5"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.5"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/TM_KnowledgeSystem_guide.html';
+          this.page.identifier = 'TM_KnowledgeSystem_guide.html';
+          this.page.title = '【团队管理】【团队知识系统指导】';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
