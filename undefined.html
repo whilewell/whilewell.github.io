@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="文章导读以下是对PPTP的简介，以及目前应该使用哪个组件作为PPTP的server和client，本文主要侧重在client组件的说明。 PPTP简介实现具体方案ACCEL-PPTP方案ACCEL-PPTP 是一个高性能的PPTP client/server软件。该软件基于[POPTOP] (http://www.poptop.org) and [PPTPCLIENT] (http://pptpc">
+<meta name="description" content="文章导读以下是对PPTP的简介，以及目前应该使用哪个组件作为PPTP的server和client，本文主要侧重在client组件的说明。 PPTP简介（来自维基百科）点对点隧道协议（英语：Point to Point Tunneling Protocol，缩写为PPTP）是实现虚拟专用网（VPN）的方式之一。PPTP使用传输控制协议（TCP）创建控制通道来发送控制命令，以及利用通用路由封装（GRE">
 <meta name="keywords" content="网络编程, PPTP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【网络编程】【PPTP】">
 <meta property="og:url" content="http://yoursite.com/undefined.html">
 <meta property="og:site_name" content="loop">
-<meta property="og:description" content="文章导读以下是对PPTP的简介，以及目前应该使用哪个组件作为PPTP的server和client，本文主要侧重在client组件的说明。 PPTP简介实现具体方案ACCEL-PPTP方案ACCEL-PPTP 是一个高性能的PPTP client/server软件。该软件基于[POPTOP] (http://www.poptop.org) and [PPTPCLIENT] (http://pptpc">
+<meta property="og:description" content="文章导读以下是对PPTP的简介，以及目前应该使用哪个组件作为PPTP的server和client，本文主要侧重在client组件的说明。 PPTP简介（来自维基百科）点对点隧道协议（英语：Point to Point Tunneling Protocol，缩写为PPTP）是实现虚拟专用网（VPN）的方式之一。PPTP使用传输控制协议（TCP）创建控制通道来发送控制命令，以及利用通用路由封装（GRE">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T15:13:23.290Z">
+<meta property="og:updated_time" content="2019-07-23T15:41:01.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【网络编程】【PPTP】">
-<meta name="twitter:description" content="文章导读以下是对PPTP的简介，以及目前应该使用哪个组件作为PPTP的server和client，本文主要侧重在client组件的说明。 PPTP简介实现具体方案ACCEL-PPTP方案ACCEL-PPTP 是一个高性能的PPTP client/server软件。该软件基于[POPTOP] (http://www.poptop.org) and [PPTPCLIENT] (http://pptpc">
+<meta name="twitter:description" content="文章导读以下是对PPTP的简介，以及目前应该使用哪个组件作为PPTP的server和client，本文主要侧重在client组件的说明。 PPTP简介（来自维基百科）点对点隧道协议（英语：Point to Point Tunneling Protocol，缩写为PPTP）是实现虚拟专用网（VPN）的方式之一。PPTP使用传输控制协议（TCP）创建控制通道来发送控制命令，以及利用通用路由封装（GRE">
 
 
 
@@ -416,8 +416,21 @@
 
       
         <h2 id="文章导读"><a href="#文章导读" class="headerlink" title="文章导读"></a>文章导读</h2><p>以下是对PPTP的简介，以及目前应该使用哪个组件作为PPTP的server和client，本文主要侧重在client组件的说明。</p>
-<h2 id="PPTP简介"><a href="#PPTP简介" class="headerlink" title="PPTP简介"></a>PPTP简介</h2><h2 id="实现具体方案"><a href="#实现具体方案" class="headerlink" title="实现具体方案"></a>实现具体方案</h2><h2 id="ACCEL-PPTP方案"><a href="#ACCEL-PPTP方案" class="headerlink" title="ACCEL-PPTP方案"></a>ACCEL-PPTP方案</h2><p><a href="http://accel-pptp.sourceforge.net/" target="_blank" rel="noopener">ACCEL-PPTP</a> 是一个高性能的PPTP client/server软件。该软件基于[POPTOP] (<a href="http://www.poptop.org" target="_blank" rel="noopener">http://www.poptop.org</a>) and [PPTPCLIENT] (<a href="http://pptpclient.sourceforge.net" target="_blank" rel="noopener">http://pptpclient.sourceforge.net</a>) </p>
-<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><ol>
+<h2 id="PPTP简介（来自维基百科）"><a href="#PPTP简介（来自维基百科）" class="headerlink" title="PPTP简介（来自维基百科）"></a>PPTP简介（来自维基百科）</h2><p>点对点隧道协议（英语：Point to Point Tunneling Protocol，缩写为PPTP）是实现虚拟专用网（VPN）的方式之一。PPTP使用传输控制协议（TCP）创建控制通道来发送控制命令，以及利用通用路由封装（GRE）通道来封装点对点协议（PPP）数据包以发送数据。这个协议最早由微软等厂商主导开发，但因为它的加密方式容易被破解，微软已经不再建议使用这个协议。</p>
+<p>PPTP的协议规范本身并未描述加密或身份验证的部分，它依靠点对点协议（PPP）来实现这些安全性功能。因为PPTP协议内置在微软视窗系统家族的各个产品中，在微软点对点协议（PPP）协议堆栈中，提供了各种标准的身份验证与加密机制来支持PPTP [1]。 在微软视窗系统中，它可以搭配PAP、CHAP、MS-CHAP v1/v2或EAP-TLS来进行身份验证。通常也可以搭配微软点对点加密（MPPE）或IPSec的加密机制来提高安全性[2]。</p>
+<p>在Windows或Mac OS平台之外，Linux与FreeBSD等平台也提供开放源代码的版本。<br>PPTP不是IETF建议的标准，是由微软、Ascend Communications（现在属于Alcatel-Lucent集团）、3Com等厂商联合形成的产业联盟开发[3]。 1999年7月发布的 RFC 2637是第一个正式的PPTP规格书。</p>
+<p>PPTP以通用路由封装（GRE）协议向对方作一般的点对点传输。通过TCP1723端口来发起和管理GRE状态。因为PPTP需要2个网络状态，因此会对穿越防火墙造成困难。很多防火墙不能完整地传递连线，导致无法连接。 在Windows或Mac OS平台，通常PPTP可搭配MSCHAP-v2或EAP-TLS进行身份验证 ，也可配合微软点对点加密（MPPE）进行连接时的加密。</p>
+<p>与PPTP相似的另一种常见的VPN协议是第二层隧道协议（L2TP）[4]。</p>
+<p>应用<br>PPTP因为易于设置和是首个支持微软拨号连线的协议而流行。自Microsoft Windows 95 OSR2开始包含PPTP客户端，但是被限制只可同时存2个向外链线。Windows XP的远程桌面连线包含PPTP。</p>
+<p>以往，Linux缺乏完整的PPTP支持，这是因为MPPE是软件专利。但是，自从在2005年10月28日发布的Linux 2.6.14起Linux核心提供完整的PPTP支持（包含对自由版本的MPPE支持）。</p>
+<p>实现<br>PPTP 是第一个被 Microsoft 拨号网络支持的 VPN 通信协议。自 Windows 95 OSR2 起，所有的 Microsoft Windows 版本都内置了 PPTP 客户端软件（虽然只能支持最多两个同时对外的连线）。 在 Mobile 版本上，Microsoft Windows Mobile 2003 与更新的版本也支持 PPTP。Windows 的路由及远程访问包有包含 PPTP 服务器。 Microsoft 的实现在 MS-CHAP 认证协议内使用了单次 DES 加密，但单次 DES 常被认为无法提供数据足够等级的安全防护。[2]</p>
+<p>Windows Vista 与更新版本的 PPTP 开始支持 PEAP。认证机制有 PEAPv0 / EAP-MSCHAPv2 (使用密码) 还有 PEAP-TLS (智能卡与证书)。 Windows Vista 同时停止了 MSCHAP-v1 的认证协议。[3]</p>
+<p>Linux 的 PPTP 服务器一般是使用 PoPToP[4] 包加上 PPP 与 MPPE 的 Kernel Module。PPTP的客户端程序从 1997[5] 就开始提供了，但服务器部分要等到 Matthew Ramsay 在 1999[6]开发的版本从 Moreton Bay 以 GNU GPL 发行后才真正开始有人大量使用。但是，Linux发行版本一开始通常都不包含 MPPE 的部分（因为担心有专利问题）所以不完整，直到 2005/10/28 发布的 Linux Kernel 2.6.14 才正式支持 MPPE。 SuSE Linux 10 是第一个有完整可用的 PPTP 客户端程序的版本。另外还有 ACCEL-PPP 包: 它提供了 PPTP / L2TP / PPPoE 服务器[7]，可提供 kernel 模式的 PPTP 协议。</p>
+<p>OpenBSD 跟 FreeBSD 在 “ports” 包系统里提供 PoPToP。 OSX 与 iOS 则提供内置 PPTP 客户端程序。 OS X Server 内置了 PPTP 服务。 Cisco 与 Efficient Networks 有另外贩卖给旧版 Mac OS 使用的 PPTP 客户端程序。 许多 Android 智能形手机也支持 PPTP。</p>
+<h2 id="ACCEL-PPTP方案"><a href="#ACCEL-PPTP方案" class="headerlink" title="ACCEL-PPTP方案"></a>ACCEL-PPTP方案</h2><p><a href="http://accel-pptp.sourceforge.net/" target="_blank" rel="noopener">ACCEL-PPTP</a> 是一个高性能的PPTP client/server软件。该软件基于[POPTOP] (<a href="http://www.poptop.org" target="_blank" rel="noopener">http://www.poptop.org</a>) and [PPTPCLIENT] (<a href="http://pptpclient.sourceforge.net" target="_blank" rel="noopener">http://pptpclient.sourceforge.net</a>) ，同时使用内核模块来提高性能并降低系统使用率。</p>
+<ol>
+<li>最后一次更新的时间为2013-04-09</li>
+<li>官方时速（以太网）：<br>top speed：11.02MB/S<h2 id="PPTPCLIENT-方案"><a href="#PPTPCLIENT-方案" class="headerlink" title="PPTPCLIENT 方案"></a>PPTPCLIENT 方案</h2>该方案最新版本pptp-1.10.0，最近提交时间2019-05-22，社区活跃度高。<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3></li>
 <li>poptop 是一款linux上的pptp server 软件</li>
 <li>pptpclient 是一款linux上的pptp client 软件</li>
 </ol>
@@ -600,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章导读"><span class="nav-number">1.</span> <span class="nav-text">文章导读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPTP简介"><span class="nav-number">2.</span> <span class="nav-text">PPTP简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现具体方案"><span class="nav-number">3.</span> <span class="nav-text">实现具体方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ACCEL-PPTP方案"><span class="nav-number">4.</span> <span class="nav-text">ACCEL-PPTP方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#备注"><span class="nav-number">4.1.</span> <span class="nav-text">备注</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章导读"><span class="nav-number">1.</span> <span class="nav-text">文章导读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPTP简介（来自维基百科）"><span class="nav-number">2.</span> <span class="nav-text">PPTP简介（来自维基百科）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ACCEL-PPTP方案"><span class="nav-number">3.</span> <span class="nav-text">ACCEL-PPTP方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPTPCLIENT-方案"><span class="nav-number">4.</span> <span class="nav-text">PPTPCLIENT 方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#备注"><span class="nav-number">4.1.</span> <span class="nav-text">备注</span></a></li></ol></li></ol></div>
             
 
           </div>
