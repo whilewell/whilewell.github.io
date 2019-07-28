@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="网络编程, 邻居表,">
+  <meta name="keywords" content="网络编程, 锁机制,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="为什么要有锁机制？共享资源被并发使用的时候，当有可能破坏资源的一致性的时候，就需要一种同步机制，保证资源可以被使用正确。 通俗地理解锁机制厕所浴室：一种共享资源爸爸、妈妈、小孩：用户  当有一个人进入厕所后，该资源已经被占用，就会将门锁住。另一个人只能排队等待，直到资源被释放（开门离开），下一个人才能使用。  锁机制概览   名称 定义 特点 应用场景 备注     原子操作（atomic） 所谓">
-<meta name="keywords" content="网络编程, 邻居表">
+<meta name="description" content="文章导读下面文章是之前总结的关于锁机制的内容， 为什么要有锁机制？共享资源被并发使用的时候，当有可能破坏资源的一致性的时候，就需要一种同步机制，保证资源可以被使用正确。 通俗地理解锁机制厕所浴室：一种共享资源爸爸、妈妈、小孩：用户  当有一个人进入厕所后，该资源已经被占用，就会将门锁住。另一个人只能排队等待，直到资源被释放（开门离开），下一个人才能使用。  锁机制概览   名称 定义 特点 应用场">
+<meta name="keywords" content="网络编程, 锁机制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【网络编程】【邻居表】">
+<meta property="og:title" content="【网络编程】【锁机制】">
 <meta property="og:url" content="http://yoursite.com/net_network_neigh.html">
 <meta property="og:site_name" content="loop">
-<meta property="og:description" content="为什么要有锁机制？共享资源被并发使用的时候，当有可能破坏资源的一致性的时候，就需要一种同步机制，保证资源可以被使用正确。 通俗地理解锁机制厕所浴室：一种共享资源爸爸、妈妈、小孩：用户  当有一个人进入厕所后，该资源已经被占用，就会将门锁住。另一个人只能排队等待，直到资源被释放（开门离开），下一个人才能使用。  锁机制概览   名称 定义 特点 应用场景 备注     原子操作（atomic） 所谓">
+<meta property="og:description" content="文章导读下面文章是之前总结的关于锁机制的内容， 为什么要有锁机制？共享资源被并发使用的时候，当有可能破坏资源的一致性的时候，就需要一种同步机制，保证资源可以被使用正确。 通俗地理解锁机制厕所浴室：一种共享资源爸爸、妈妈、小孩：用户  当有一个人进入厕所后，该资源已经被占用，就会将门锁住。另一个人只能排队等待，直到资源被释放（开门离开），下一个人才能使用。  锁机制概览   名称 定义 特点 应用场">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-03T15:31:48.684Z">
+<meta property="og:updated_time" content="2019-07-24T13:46:44.756Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【网络编程】【邻居表】">
-<meta name="twitter:description" content="为什么要有锁机制？共享资源被并发使用的时候，当有可能破坏资源的一致性的时候，就需要一种同步机制，保证资源可以被使用正确。 通俗地理解锁机制厕所浴室：一种共享资源爸爸、妈妈、小孩：用户  当有一个人进入厕所后，该资源已经被占用，就会将门锁住。另一个人只能排队等待，直到资源被释放（开门离开），下一个人才能使用。  锁机制概览   名称 定义 特点 应用场景 备注     原子操作（atomic） 所谓">
+<meta name="twitter:title" content="【网络编程】【锁机制】">
+<meta name="twitter:description" content="文章导读下面文章是之前总结的关于锁机制的内容， 为什么要有锁机制？共享资源被并发使用的时候，当有可能破坏资源的一致性的时候，就需要一种同步机制，保证资源可以被使用正确。 通俗地理解锁机制厕所浴室：一种共享资源爸爸、妈妈、小孩：用户  当有一个人进入厕所后，该资源已经被占用，就会将门锁住。另一个人只能排队等待，直到资源被释放（开门离开），下一个人才能使用。  锁机制概览   名称 定义 特点 应用场">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>【网络编程】【邻居表】 | loop</title>
+  <title>【网络编程】【锁机制】 | loop</title>
   
 
 
@@ -332,7 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【网络编程】【邻居表】</h1>
+          <h1 class="post-title" itemprop="name headline">【网络编程】【锁机制】</h1>
         
 
         <div class="post-meta">
@@ -415,7 +415,8 @@
       
 
       
-        <h2 id="为什么要有锁机制？"><a href="#为什么要有锁机制？" class="headerlink" title="为什么要有锁机制？"></a>为什么要有锁机制？</h2><p>共享资源被并发使用的时候，当有可能破坏资源的一致性的时候，就需要一种同步机制，保证资源可以被使用正确。</p>
+        <h2 id="文章导读"><a href="#文章导读" class="headerlink" title="文章导读"></a>文章导读</h2><p>下面文章是之前总结的关于锁机制的内容，</p>
+<h2 id="为什么要有锁机制？"><a href="#为什么要有锁机制？" class="headerlink" title="为什么要有锁机制？"></a>为什么要有锁机制？</h2><p>共享资源被并发使用的时候，当有可能破坏资源的一致性的时候，就需要一种同步机制，保证资源可以被使用正确。</p>
 <h2 id="通俗地理解锁机制"><a href="#通俗地理解锁机制" class="headerlink" title="通俗地理解锁机制"></a>通俗地理解锁机制</h2><p><strong>厕所浴室</strong>：一种共享资源<br><strong>爸爸、妈妈、小孩</strong>：用户</p>
 <blockquote>
 <p>当有一个人进入厕所后，该资源已经被占用，就会将门锁住。另一个人只能排队等待，直到资源被释放（开门离开），下一个人才能使用。</p>
@@ -465,6 +466,7 @@
 </tr>
 </tbody>
 </table>
+<h2 id="linux-锁机制实现"><a href="#linux-锁机制实现" class="headerlink" title="linux 锁机制实现"></a>linux 锁机制实现</h2><p>### </p>
 
       
     </div>
@@ -482,7 +484,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/网络编程-邻居表/" rel="tag"># 网络编程, 邻居表</a>
+            <a href="/tags/网络编程-锁机制/" rel="tag"># 网络编程, 锁机制</a>
           
         </div>
       
@@ -505,8 +507,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/net_network_neigh.html" rel="prev" title="【网络编程】【邻居表】">
-                【网络编程】【邻居表】 <i class="fa fa-chevron-right"></i>
+              <a href="/net_network_neigh.html" rel="prev" title="【网络】【邻居表】">
+                【网络】【邻居表】 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -593,7 +595,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -604,7 +606,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -615,7 +617,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -648,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要有锁机制？"><span class="nav-number">1.</span> <span class="nav-text">为什么要有锁机制？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通俗地理解锁机制"><span class="nav-number">2.</span> <span class="nav-text">通俗地理解锁机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锁机制概览"><span class="nav-number">3.</span> <span class="nav-text">锁机制概览</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章导读"><span class="nav-number">1.</span> <span class="nav-text">文章导读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要有锁机制？"><span class="nav-number">2.</span> <span class="nav-text">为什么要有锁机制？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通俗地理解锁机制"><span class="nav-number">3.</span> <span class="nav-text">通俗地理解锁机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锁机制概览"><span class="nav-number">4.</span> <span class="nav-text">锁机制概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-锁机制实现"><span class="nav-number">5.</span> <span class="nav-text">linux 锁机制实现</span></a></li></ol></div>
             
 
           </div>
@@ -821,7 +823,7 @@
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/net_network_neigh.html';
           this.page.identifier = 'net_network_neigh.html';
-          this.page.title = '【网络编程】【邻居表】';
+          this.page.title = '【网络编程】【锁机制】';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
